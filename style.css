@@ -1,0 +1,90 @@
+.vertical.carousel {
+    position: relative;
+}
+.vertical.carousel-item {
+    position: relative;
+    display: none;
+    float: left;
+    height: 100%;
+    margin-right: -100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.vertical.carousel-item-next:not(.vertical.carousel-item.start),
+.vertical.active.carousel-item-end {
+    transform: translateY(100%);
+}
+
+.vertical.carousel-item-prev:not(.vertical.carousel-item.end),
+.vertical.active.carousel-item-start {
+    transform: translateY(-100%);
+}
+
+.vertical.carousel-item.active,
+.vertical.carousel-item-next,
+.vertical.carousel-item-prev {
+    display: block;
+}
+
+.project-card {
+    position: relative;
+    height: 300px;
+    border-radius: 8px;
+    
+    overflow: hidden;
+    transition: all 0.3s ease;
+    color: white;
+    background-color: black;
+}
+
+/* Ensure carousel images fill the container */
+.project-card .carousel-item img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-card:hover .carousel-item {
+    background-color: black;
+    opacity: 0.6;
+}
+
+.project-content {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover .project-content {
+    bottom: 50%;
+    transform: translateY(50%);
+}
+
+.project-description {
+    display: none;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover .project-description {
+    display: block;
+}
+
+.tools-bar {
+    position: absolute;
+    top: -40px;
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover .tools-bar {
+    top: 0;
+}
+
+.tool-icon {
+    margin: 0 5px;
+    font-size: 1.5em;
+}
