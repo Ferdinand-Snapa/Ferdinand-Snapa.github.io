@@ -14,20 +14,6 @@
   <header class="text-center">
     <p class="lead">A portfolio showcasing my work and skills.</p>
   </header>
-  <nav class="sticky-top bg-light">
-    <ul class="nav nav-pills justify-content-center z-2">
-      <li class="nav-item">
-        <a class="nav-link active" href="#">Me</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Portfolio</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Contact Me</a>
-      </li>
-    </ul>
-    <div class="bg-secondary center" style="width: 100%; height: 1px;"></div>
-  </nav>
 
 
 <!-- About Me Section -->
@@ -40,7 +26,7 @@
       </div>
     </div>
     <div class="col-12 col-md-8 order-2 order-md-1">
-      <h2 class="text-center">About Me</h2>
+      <h2 class="text-center" id="about-me">About Me</h2>
       <p class="lead text-center">
         I am a motivated young adult, with a fresh bachelor's degree in Programming from NTNU Gjøvik. 
         I am eager and creative, with passion for game design, tinkering, programming and a lot more
@@ -55,6 +41,7 @@
               <div class="vertical carousel-item border rounded bg-light text-primary" data-bs-interval="2000">Programing</div>
               <div class="vertical carousel-item border rounded bg-light text-primary" data-bs-interval="2000">DnD</div>
               <div class="vertical carousel-item border rounded bg-light text-primary" data-bs-interval="2000">Photoshop</div>
+              <div class="vertical carousel-item border rounded bg-light text-primary" data-bs-interval="2000">Mythology</div>
             </div>
           </div>
           <div id="carouselExample" class="vertical carousel slide col-12 col-md-4 text-white p-3" data-ride="carousel"  data-bs-ride="carousel">
@@ -67,6 +54,7 @@
               <div class="vertical carousel-item border rounded bg-light text-primary" data-bs-interval="2000">Lego</div>
               <div class="vertical carousel-item border rounded bg-light text-primary" data-bs-interval="2000">Web dev</div>
               <div class="vertical carousel-item border rounded bg-light text-primary" data-bs-interval="2000">Board Games</div>
+              <div class="vertical carousel-item border rounded bg-light text-primary" data-bs-interval="2000">Pc Building</div>
             </div>
           </div>
           <div id="carouselExample" class="vertical carousel slide col-12 col-md-4 text-white p-3" data-ride="carousel"  data-bs-ride="carousel">
@@ -78,6 +66,7 @@
               <div class="vertical carousel-item border rounded bg-light text-primary" data-bs-interval="2000">Rasberry pi</div>
               <div class="vertical carousel-item border rounded bg-light text-primary" data-bs-interval="2000">System Design</div>
               <div class="vertical carousel-item border rounded bg-light text-primary" data-bs-interval="2000">Graphics engines</div>
+              <div class="vertical carousel-item border rounded bg-light text-primary" data-bs-interval="2000">Video Gmes</div>
             </div>
           </div>
       </div>
@@ -500,8 +489,9 @@
           <div class="project-content container-fluid">
             <h3 class="project-title">Yggdrasil-VTT</h3>
             <p class="project-description">
-              A passion project in the early stages of development. Yggdrasil-VTT is the viritual tabletop for the programer's,
-              built around a custom interperated node based programing language, players can create and share their own TTRPG, then simulate encounters online with others.
+              Named after the wolrd tree, know in norese mythology for connecting the different realms. 
+              I wanted to create a application for programmers and enthusiasts. To create, modify and share their own game worlds, for any table top role playing game. 
+              Using a custom node based interpreted programming language, that I am developing for this project
             </p>
           </div>
         </div>
@@ -512,20 +502,50 @@
           <div class="modal-body p-0 bg-light container my-5 rounded">
             <div class="row">
               <div class="col-12">
-                <h4 class="modal-title text-center py-3">Yggdrasil-VTT</h4>
+                <h4 class="modal-title text-center py-3">Yggdrasil-VTT <a title="View Repository" href="https://github.com/Ferdinand-Snapa/Yggdrasil-VTT/tree/dev"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a></h4>
               </div>
             </div>
             <div class="row g-0">
               <div class="col-md-6 p-4" style="max-height:530px; overflow-y:auto;">
                 <div class="h-100 d-flex flex-column">
                   <p>
-                    A passion project in the early stages of development. Yggdrasil-VTT is the viritual tabletop for the programer's,
-                    built around a custom interperated node based programing language, players can create and share their own TTRPG, then simulate encounters online with others.
+                    Named after the wolrd tree, know in norese mythology for connecting the different realms. 
+                    I wanted to create a application for programmers and enthusiasts. To create, modify and share their own game worlds, for any table top role playing game. 
+                    Using a custom node based interpreted programming language, that I am developing for this project
                     <br><br>
-                    Inspired by a friend and his wierd crit rules, I wanted to creat a system where he could program how crits work,
-                    while the system handles calculations and game logick.
-                    <br><br>
-                    I want the game rules to come second to the game masters ruling. My solution is to pressent the changes any action will have to the game master, where they 
+                    Each world would contain custom game rules, represented by different templates and the interactions between them, similar to classes in a object oriented programing language. 
+                    Templets are design to extend from each other, as an example you could make a template for handeling <i>Health</i> and one for handeling <i>Movement</i>. Using these you could make a template 
+                    for enemies and players. While still making it easy to create a wall that can take damage. 
+                    <br>
+                    Each template consist of <strong>Variables</strong>, <strong>Functions</strong>, <strong>Signals</strong> and <strong>Modifications</strong>. 
+                    <ul>
+                      <li>
+                        <strong>Variables</strong>: represents the state of an object, while creating a template you will declare variables that will be populated by values when 
+                        creating a object from that template. Examples could be <strong>Max HP </strong><i>Int</i>, <strong>Current HP </strong><i>Int</i>, <strong>Inventory</strong> <i>Array of Item</i> and <strong>Resistances</strong> <i>Array of DamageType:Tag</i>
+                      </li>
+                      <li>
+                        <strong>Functions</strong>: is the basic logick of how the template works, as an example the <i>Health</i> templet could have functions for <i>Recieve Healing</i> <i>Recieve Damage</i>, 
+                        Recieve Damage could take a <i>Int</i>, <i>Tag of Damage type</i> and a <i>Bool</i> representing if the damage recieved is critical. Using this the fucntion can: 
+                        Check if the Damage type is part of the <strong>Resistances</strong> array, if it is half the intager recieved, then using that number subtract if from the <strong>Current HP</strong>, 
+                        now set that value as the new <strong>Current HP</strong>, finaly check if the new <strong>Current HP</strong> is less than 1. If it is send out a Singal, notifying anything that is "listening". 
+                      </li>
+                      <li>
+                        <Strong>Signals</Strong>: used for communicating between tempaltes, either within the same object or between different ones. As an example, if a character has an attack that 
+                        deals fire damage in an area, all objects within that area will recieve a signal saying <i>Take Damage</i>, conntaining: <i>Int</i> for damage, <i>Tag</i> for Damage type, and <i>Bool</i> for critical. 
+                        Now since the <strong>Health</strong> templates <i>Recieve Dmage</i> function listens to this signal, only the objects within the area deriving from the health tag wil be effetced. 
+                        This might lead to fun interactions, where the floor the characters are standing on is destroyed.
+                      </li>
+                      <li>
+                        <strong>Modifications</strong>: are ment to describe exceptions to the normal functions and are ment to work seamlessly in combination with other modifications applied to the character. Keeping to 
+                        the example of the <strong>Health</strong> template, we could declare modifications to how damage is recieved. Say we wanted to represent a character that is extra resiliant. 
+                        We could make a modification to the <i>Recieve Damage</i> function, where if the character has Resistance to the damage type the damage is divided by (2 + number of resiliant modifiers on character). 
+                        Inn adition we could make a modifier that uses the Is Critical <i>Bool</i>, by automaticaly adding (10 * number of modifiers) to any damage recieved, as long as the Is Critical <i>Bool</i> is true. 
+                        Now we could combine bouth these modifiers to represent a character resembeling achilles of greek myth.
+                      </li>
+                    </ul>
+                   <br>
+
+                    When it comes to playing each world. I want the game rules to come second to the game masters ruling. My solution is to pressent the changes any action will have to the game master, where they 
                     will be prompted to change the outcome of any choice or dice role.
                     <br><br>
                     Since the interperated language is ment for creating any table top game, I found it helpfull to add new types of variables:
@@ -598,13 +618,13 @@
         <div id="carouselExampleIndicators" class="carousel slide shadow-lg" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="images/floor_texture.png" class="d-block w-100" alt="Project Image 1">
+              <img src="images/Integration/FridgeIO.jpg" class="d-block w-100" alt="Project Image 1">
             </div>
             <div class="carousel-item">
-              <img src="images/ironBlock.png" class="d-block w-100" alt="Project Image 2">
+              <img src="images/Integration/HomescreenWireframe.png" class="d-block w-100" alt="Project Image 2">
             </div>
             <div class="carousel-item">
-              <img src="images/wood.jpg" class="d-block w-100" alt="Project Image 3">
+              <img src="images/Integration/mariaDBStruktur.png" class="d-block w-100" alt="Project Image 3">
             </div>
             <!-- Add more carousel items as needed -->
           </div>
@@ -702,7 +722,16 @@
                 <div id="modal4Carousel" class="carousel slide">
                   <div class="carousel-inner rounded">
                     <div class="carousel-item active">
+                      <img src="images/Integration/FridgeIO.jpg" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
                       <video src="images/Integration/Fridge.IO - Opera 2023-12-06 17-29-38.mp4" class="d-block w-100" controls autoplay loop muted webkit-playsinline playsinline></video>
+                    </div>
+                    <div class="carousel-item">
+                      <img src="images/Integration/HomescreenWireframe.png" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="images/Integration/mariaDBStruktur.png" class="d-block w-100">
                     </div>
                   </div>
                   <button class="carousel-control-prev" type="button" data-bs-target="#modal4Carousel" data-bs-slide="prev">
@@ -872,6 +901,20 @@
     <!-- Bootstrap Icons CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+  
+  document.querySelectorAll('.carousel').forEach(function(carousel) {
+    carousel.addEventListener('mouseenter', function () {
+      var bsCarousel = bootstrap.Carousel.getOrCreateInstance(carousel);
+      bsCarousel.pause();
+    });
+    carousel.addEventListener('mouseleave', function () {
+      var bsCarousel = bootstrap.Carousel.getOrCreateInstance(carousel);
+      bsCarousel.cycle();
+    });
+  });
+
+</script>
 </body>
+
 </html>
