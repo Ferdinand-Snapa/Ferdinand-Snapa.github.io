@@ -28,7 +28,7 @@
     <div class="col-12 col-md-8 order-2 order-md-1">
       <h2 class="text-center" id="about-me">About Me</h2>
       <p class="lead text-center">
-        I am a motivated young adult, with a fresh bachelor's degree in Programming from NTNU Gjøvik. 
+        I am a motivated young adult, with a fresh bachelor's degree in Programming from NTNU Gjøvik. <i><img title="NTNU Gjøvik" width="30" height="30" src="images/SVG/ntnu_logo.svg"></i><br>
         I am eager and creative, with passion for game design, tinkering, programming and a lot more
       </p>
       <div class="row container text-center overflow-y-auto d-flex justify-content-center align-items-start" alt="Interests" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#modal0">
@@ -91,7 +91,6 @@
                       This led to one of my earliest projects, a Raspberry Pi handheld game console, where I could upload my own games.<br>
                       By combining a Raspberry Pi, a tiny LCD display, two free merchandise power banks, an old Xbox controller and some Legos for the case. I loaded up some old game emulators. 
                       Unfortunately it wasn't powerful enough to run the game made in RPG Maker.
-
                     </p>
                   </div>
                 </div>
@@ -143,63 +142,126 @@
   <div class="container my-5">
     <div class="row">
 
-    <!-- Each project card -->
-    <div class="col-md-4 col-sm-12 mb-4" alt="Bachelor" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#modal1">
+    <!--Project card-->
+    <div class="col-md-4 col-sm-12 mb-4" alt="Name of project" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#NameOfProjectModal">
       <div class="project-card">
-        <!-- Carousel for multiple images -->
-        <div id="carouselExampleIndicators" class="carousel slide shadow-lg" data-bs-ride="carousel">
+        <div class="carousel slide shadow-lg" data-bs-ride="carousel">
           <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="images/Bachelor/Side by side comparison.JPG" class="d-block w-100" alt="Project Image 1">
-            </div>
-            <div class="carousel-item">
-              <img src="images/Bachelor/ItemInfo.JPG" class="d-block w-100" alt="Project Image 2">
-            </div>
-            <div class="carousel-item">
-              <img src="images/Bachelor/Reservationpage.JPG" class="d-block w-100" alt="Project Image 3">
-            </div>
-            <!-- Add more carousel items as needed -->
+            <!--Images in the carousel-->
+            <div class="carousel-item active"><img></div>
+            <div class="carousel-item"><img></div>
           </div>
         </div>
-
-        <!-- Tool icons -->
+        <!--Tools used in project-->
         <div class="tools-bar">
-          <i class="tool-icon">
-            <!-- SVG React -->
-             <svg width="30" height="30" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.6789 15.9759C18.6789 14.5415 17.4796 13.3785 16 13.3785C14.5206 13.3785 13.3211 14.5415 13.3211 15.9759C13.3211 17.4105 14.5206 18.5734 16 18.5734C17.4796 18.5734 18.6789 17.4105 18.6789 15.9759Z" fill="#53C1DE"/><path fill-rule="evenodd" clip-rule="evenodd" d="M24.7004 11.1537C25.2661 8.92478 25.9772 4.79148 23.4704 3.39016C20.9753 1.99495 17.7284 4.66843 16.0139 6.27318C14.3044 4.68442 10.9663 2.02237 8.46163 3.42814C5.96751 4.82803 6.73664 8.8928 7.3149 11.1357C4.98831 11.7764 1 13.1564 1 15.9759C1 18.7874 4.98416 20.2888 7.29698 20.9289C6.71658 23.1842 5.98596 27.1909 8.48327 28.5877C10.9973 29.9932 14.325 27.3945 16.0554 25.7722C17.7809 27.3864 20.9966 30.0021 23.4922 28.6014C25.9956 27.1963 25.3436 23.1184 24.7653 20.8625C27.0073 20.221 31 18.7523 31 15.9759C31 13.1835 26.9903 11.7923 24.7004 11.1537ZM24.4162 19.667C24.0365 18.5016 23.524 17.2623 22.8971 15.9821C23.4955 14.7321 23.9881 13.5088 24.3572 12.3509C26.0359 12.8228 29.7185 13.9013 29.7185 15.9759C29.7185 18.07 26.1846 19.1587 24.4162 19.667ZM22.85 27.526C20.988 28.571 18.2221 26.0696 16.9478 24.8809C17.7932 23.9844 18.638 22.9422 19.4625 21.7849C20.9129 21.6602 22.283 21.4562 23.5256 21.1777C23.9326 22.7734 24.7202 26.4763 22.85 27.526ZM9.12362 27.5111C7.26143 26.47 8.11258 22.8946 8.53957 21.2333C9.76834 21.4969 11.1286 21.6865 12.5824 21.8008C13.4123 22.9332 14.2816 23.9741 15.1576 24.8857C14.0753 25.9008 10.9945 28.557 9.12362 27.5111ZM2.28149 15.9759C2.28149 13.874 5.94207 12.8033 7.65904 12.3326C8.03451 13.5165 8.52695 14.7544 9.12123 16.0062C8.51925 17.2766 8.01977 18.5341 7.64085 19.732C6.00369 19.2776 2.28149 18.0791 2.28149 15.9759ZM9.1037 4.50354C10.9735 3.45416 13.8747 6.00983 15.1159 7.16013C14.2444 8.06754 13.3831 9.1006 12.5603 10.2265C11.1494 10.3533 9.79875 10.5569 8.55709 10.8297C8.09125 9.02071 7.23592 5.55179 9.1037 4.50354ZM20.3793 11.5771C21.3365 11.6942 22.2536 11.85 23.1147 12.0406C22.8562 12.844 22.534 13.6841 22.1545 14.5453C21.6044 13.5333 21.0139 12.5416 20.3793 11.5771ZM16.0143 8.0481C16.6054 8.66897 17.1974 9.3623 17.7798 10.1145C16.5985 10.0603 15.4153 10.0601 14.234 10.1137C14.8169 9.36848 15.414 8.67618 16.0143 8.0481ZM9.8565 14.5444C9.48329 13.6862 9.16398 12.8424 8.90322 12.0275C9.75918 11.8418 10.672 11.69 11.623 11.5748C10.9866 12.5372 10.3971 13.5285 9.8565 14.5444ZM11.6503 20.4657C10.6679 20.3594 9.74126 20.2153 8.88556 20.0347C9.15044 19.2055 9.47678 18.3435 9.85796 17.4668C10.406 18.4933 11.0045 19.4942 11.6503 20.4657ZM16.0498 23.9915C15.4424 23.356 14.8365 22.6531 14.2448 21.8971C15.4328 21.9423 16.6231 21.9424 17.811 21.891C17.2268 22.6608 16.6369 23.3647 16.0498 23.9915ZM22.1667 17.4222C22.5677 18.3084 22.9057 19.1657 23.1742 19.9809C22.3043 20.1734 21.3652 20.3284 20.3757 20.4435C21.015 19.4607 21.6149 18.4536 22.1667 17.4222ZM18.7473 20.5941C16.9301 20.72 15.1016 20.7186 13.2838 20.6044C12.2509 19.1415 11.3314 17.603 10.5377 16.0058C11.3276 14.4119 12.2404 12.8764 13.2684 11.4158C15.0875 11.2825 16.9178 11.2821 18.7369 11.4166C19.7561 12.8771 20.6675 14.4086 21.4757 15.9881C20.6771 17.5812 19.7595 19.1198 18.7473 20.5941ZM22.8303 4.4666C24.7006 5.51254 23.8681 9.22726 23.4595 10.8426C22.2149 10.5641 20.8633 10.3569 19.4483 10.2281C18.6239 9.09004 17.7698 8.05518 16.9124 7.15949C18.1695 5.98441 20.9781 3.43089 22.8303 4.4666Z" fill="#53C1DE"/></svg>
-          </i>
-          <i class="tool-icon">
-            <!-- SVG TS-->
-            <svg xmlns="http://www.w3.org/2000/svg" aria-label="TypeScript" role="img" viewBox="0 0 512 512" width="26" height="26" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><rect width="512" height="512" rx="15%" fill="#3178c6"></rect><path fill="#ffffff" d="m233 284h64v-41H118v41h64v183h51zm84 173c8.1 4.2 18 7.3 29 9.4s23 3.1 35 3.1c12 0 23-1.1 34-3.4c11-2.3 20-6.1 28-11c8.1-5.3 15-12 19-21s7.1-19 7.1-32c0-9.1-1.4-17-4.1-24s-6.6-13-12-18c-5.1-5.3-11-10-18-14s-15-8.2-24-12c-6.6-2.7-12-5.3-18-7.9c-5.2-2.6-9.7-5.2-13-7.8c-3.7-2.7-6.5-5.5-8.5-8.4c-2-3-3-6.3-3-10c0-3.4.89-6.5 2.7-9.3s4.3-5.1 7.5-7.1c3.2-2 7.2-3.5 12-4.6c4.7-1.1 9.9-1.6 16-1.6c4.2 0 8.6.31 13 .94c4.6.63 9.3 1.6 14 2.9c4.7 1.3 9.3 2.9 14 4.9c4.4 2 8.5 4.3 12 6.9v-47c-7.6-2.9-16-5.1-25-6.5s-19-2.1-31-2.1c-12 0-23 1.3-34 3.8s-20 6.5-28 12c-8.1 5.4-14 12-19 21c-4.7 8.4-7 18-7 30c0 15 4.3 28 13 38c8.6 11 22 19 39 27c6.9 2.8 13 5.6 19 8.3s11 5.5 15 8.4c4.3 2.9 7.7 6.1 10 9.5c2.5 3.4 3.8 7.4 3.8 12c0 3.2-.78 6.2-2.3 9s-3.9 5.2-7.1 7.2s-7.1 3.6-12 4.8c-4.7 1.1-10 1.7-17 1.7c-11 0-22-1.9-32-5.7c-11-3.8-21-9.5-28.1-15.44z"></path></g></svg>
-          </i>
-          <i class="tool-icon">
-            <!-- SVG Axios -->
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="30" height="30"><path fill="#5a29e4" d="m 34,43.977569 27.379067,-22.912155 0.0385,91.494586 -9.3189,7.74007 -0.15403,-76.091455 z"  /><path fill="#5a29e4" d="M 96.961687,82.322502 69.582627,105.23466 69.544127,13.74007 78.863017,6 l 0.15403,76.091452 z"  /></svg>
-          </i>
-          <i class="tool-icon">
-            <!--SVG GO-->
-            <svg version="1.1" width="50" height="50" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 254.5 225" style="enable-background:new 0 0 254.5 225;" xml:space="preserve"><style type="text/css">.st0{fill:#2DBCAF;}.st1{fill:#5DC9E1;}.st2{fill:#FDDD00;}.st3{fill:#CE3262;}.st4{fill:#00ACD7;}.st5{fill:#FFFFFF;}</style><g><g><g><g><path class="st4" d="M40.2,101.1c-0.4,0-0.5-0.2-0.3-0.5l2.1-2.7c0.2-0.3,0.7-0.5,1.1-0.5l35.7,0c0.4,0,0.5,0.3,0.3,0.6l-1.7,2.6c-0.2,0.3-0.7,0.6-1,0.6L40.2,101.1z"/></g></g></g><g><g><g><path class="st4" d="M25.1,110.3c-0.4,0-0.5-0.2-0.3-0.5l2.1-2.7c0.2-0.3,0.7-0.5,1.1-0.5l45.6,0c0.4,0,0.6,0.3,0.5,0.6l-0.8,2.4c-0.1,0.4-0.5,0.6-0.9,0.6L25.1,110.3z"/></g></g></g><g><g><g><path class="st4" d="M49.3,119.5c-0.4,0-0.5-0.3-0.3-0.6l1.4-2.5c0.2-0.3,0.6-0.6,1-0.6l20,0c0.4,0,0.6,0.3,0.6,0.7l-0.2,2.4c0,0.4-0.4,0.7-0.7,0.7L49.3,119.5z"/></g></g></g><g><g id="CXHf1q_3_"><g><g><path class="st4" d="M153.1,99.3c-6.3,1.6-10.6,2.8-16.8,4.4c-1.5,0.4-1.6,0.5-2.9-1c-1.5-1.7-2.6-2.8-4.7-3.8c-6.3-3.1-12.4-2.2-18.1,1.5c-6.8,4.4-10.3,10.9-10.2,19c0.1,8,5.6,14.6,13.5,15.7c6.8,0.9,12.5-1.5,17-6.6c0.9-1.1,1.7-2.3,2.7-3.7c-3.6,0-8.1,0-19.3,0c-2.1,0-2.6-1.3-1.9-3c1.3-3.1,3.7-8.3,5.1-10.9c0.3-0.6,1-1.6,2.5-1.6c5.1,0,23.9,0,36.4,0c-0.2,2.7-0.2,5.4-0.6,8.1c-1.1,7.2-3.8,13.8-8.2,19.6c-7.2,9.5-16.6,15.4-28.5,17c-9.8,1.3-18.9-0.6-26.9-6.6c-7.4-5.6-11.6-13-12.7-22.2c-1.3-10.9,1.9-20.7,8.5-29.3c7.1-9.3,16.5-15.2,28-17.3c9.4-1.7,18.4-0.6,26.5,4.9c5.3,3.5,9.1,8.3,11.6,14.1C154.7,98.5,154.3,99,153.1,99.3z"/></g><g><path class="st4" d="M186.2,154.6c-9.1-0.2-17.4-2.8-24.4-8.8c-5.9-5.1-9.6-11.6-10.8-19.3c-1.8-11.3,1.3-21.3,8.1-30.2c7.3-9.6,16.1-14.6,28-16.7c10.2-1.8,19.8-0.8,28.5,5.1c7.9,5.4,12.8,12.7,14.1,22.3c1.7,13.5-2.2,24.5-11.5,33.9c-6.6,6.7-14.7,10.9-24,12.8C191.5,154.2,188.8,154.3,186.2,154.6z M210,114.2c-0.1-1.3-0.1-2.3-0.3-3.3c-1.8-9.9-10.9-15.5-20.4-13.3c-9.3,2.1-15.3,8-17.5,17.4c-1.8,7.8,2,15.7,9.2,18.9c5.5,2.4,11,2.1,16.3-0.6C205.2,129.2,209.5,122.8,210,114.2z"/></g></g></g></g></g></svg>
-          </i>
-          <i class="tool-icon">
-            <!-- SVG Docker -->
-            <svg width="30" height="30" viewBox="0 -35.5 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid"><g><path d="M250.715745,70.4971666 C244.951102,66.4973277 231.740464,64.997388 221.412146,66.9973071 C220.211179,56.9977092 214.68673,48.2480609 205.078993,40.4983724 L199.554544,36.4985331 L195.711449,42.248302 C190.90758,49.7480006 188.505646,60.2475786 189.226226,70.2471769 C189.46642,73.7470364 190.667387,79.9967847 194.270289,85.496564 C190.90758,87.4964838 183.941971,89.996383 174.814621,89.996383 L1.15476998,89.996383 L0.674383104,91.9963028 C-1.00697093,101.9959 -1.00697093,133.244645 18.6888904,157.243681 C33.5808831,175.492947 55.6786788,184.742575 84.7420842,184.742575 C147.672763,184.742575 194.270289,154.493791 216.127891,99.7459909 C224.774854,99.9959813 243.269748,99.7459909 252.637292,80.996745 C252.877486,80.4967649 253.357872,79.4968046 255.039227,75.7469554 L256,73.7470364 L250.715745,70.4971666 L250.715745,70.4971666 Z M139.986573,0 L113.565295,0 L113.565295,24.9989952 L139.986573,24.9989952 L139.986573,0 L139.986573,0 Z M139.986573,29.9987943 L113.565295,29.9987943 L113.565295,54.9977896 L139.986573,54.9977896 L139.986573,29.9987943 L139.986573,29.9987943 Z M108.761427,29.9987943 L82.3401495,29.9987943 L82.3401495,54.9977896 L108.761427,54.9977896 L108.761427,29.9987943 L108.761427,29.9987943 Z M77.5362814,29.9987943 L51.1150037,29.9987943 L51.1150037,54.9977896 L77.5362814,54.9977896 L77.5362814,29.9987943 L77.5362814,29.9987943 Z M46.311135,59.9975886 L19.8898576,59.9975886 L19.8898576,84.9965839 L46.311135,84.9965839 L46.311135,59.9975886 L46.311135,59.9975886 Z M77.5362814,59.9975886 L51.1150037,59.9975886 L51.1150037,84.9965839 L77.5362814,84.9965839 L77.5362814,59.9975886 L77.5362814,59.9975886 Z M108.761427,59.9975886 L82.3401495,59.9975886 L82.3401495,84.9965839 L108.761427,84.9965839 L108.761427,59.9975886 L108.761427,59.9975886 Z M139.986573,59.9975886 L113.565295,59.9975886 L113.565295,84.9965839 L139.986573,84.9965839 L139.986573,59.9975886 L139.986573,59.9975886 Z M171.211719,59.9975886 L144.790441,59.9975886 L144.790441,84.9965839 L171.211719,84.9965839 L171.211719,59.9975886 L171.211719,59.9975886 Z" fill="#2396ED" fill-rule="nonzero"></path></g></svg>
-          </i>
-          <i class="tool-icon">
-            <!-- SVG SQLite -->
-            <svg width="30" height="30" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><linearGradient id="a" x1="-118.318" y1="45.638" x2="-116.751" y2="45.638" gradientTransform="matrix(0, 11.486, 11.486, 0, -510.889, 1363.307)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#97d9f6"/><stop offset="0.92" stop-color="#0f80cc"/><stop offset="1" stop-color="#0f80cc"/></linearGradient></defs><title>file_type_sqlite</title><path d="M23.192,3.242H5.623A2.147,2.147,0,0,0,3.482,5.383V24.759A2.147,2.147,0,0,0,5.623,26.9H17.195C17.063,21.142,19.03,9.968,23.192,3.242Z" style="fill:#0f80cc"/><path d="M22.554,3.867H5.623A1.518,1.518,0,0,0,4.107,5.383V23.345a42.01,42.01,0,0,1,13.569-2.684A123.555,123.555,0,0,1,22.554,3.867Z" style="fill:url(#a)"/><path d="M27.29,2.608c-1.2-1.073-2.66-.642-4.1.634-.213.19-.426.4-.638.625A25.4,25.4,0,0,0,17.1,15a10.178,10.178,0,0,1,.634,1.822c.036.14.069.272.1.384.062.265.1.437.1.437s-.022-.083-.113-.346l-.059-.17c-.01-.027-.023-.059-.038-.094-.16-.373-.6-1.16-.8-1.5-.167.493-.315.954-.438,1.371a12.131,12.131,0,0,1,.908,2.8s-.03-.115-.171-.515a19.037,19.037,0,0,0-.9-1.708,4.037,4.037,0,0,0-.264,1.724,6.009,6.009,0,0,1,.493,1.383c.334,1.283.566,2.846.566,2.846s.008.1.02.263a26.145,26.145,0,0,0,.065,3.205,11.362,11.362,0,0,0,.584,3.1l.18-.1a13.859,13.859,0,0,1-.478-4.628,35.269,35.269,0,0,1,1.938-9.688c2.01-5.308,4.8-9.568,7.35-11.6-2.326,2.1-5.474,8.9-6.417,11.418a45.656,45.656,0,0,0-2.254,8A6.211,6.211,0,0,1,21.39,20s1.233-1.521,2.674-3.693a26.206,26.206,0,0,0-2.755.733c-.7.294-.889.394-.889.394a23.939,23.939,0,0,1,4.215-2.007c2.676-4.215,5.592-10.2,2.656-12.824" style="fill:#003b57"/></svg>
-          </i>
-          <i class="tool-icon">
-            <!-- SVG NginX -->
-            <svg width="30" height="30" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><title>file_type_nginx</title><path d="M15.948,2h.065a10.418,10.418,0,0,1,.972.528Q22.414,5.65,27.843,8.774a.792.792,0,0,1,.414.788c-.008,4.389,0,8.777-.005,13.164a.813.813,0,0,1-.356.507q-5.773,3.324-11.547,6.644a.587.587,0,0,1-.657.037Q9.912,26.6,4.143,23.274a.7.7,0,0,1-.4-.666q0-6.582,0-13.163a.693.693,0,0,1,.387-.67Q9.552,5.657,14.974,2.535c.322-.184.638-.379.974-.535" style="fill:#019639"/><path d="M8.767,10.538q0,5.429,0,10.859a1.509,1.509,0,0,0,.427,1.087,1.647,1.647,0,0,0,2.06.206,1.564,1.564,0,0,0,.685-1.293c0-2.62-.005-5.24,0-7.86q3.583,4.29,7.181,8.568a2.833,2.833,0,0,0,2.6.782,1.561,1.561,0,0,0,1.251-1.371q.008-5.541,0-11.081a1.582,1.582,0,0,0-3.152,0c0,2.662-.016,5.321,0,7.982-2.346-2.766-4.663-5.556-7-8.332A2.817,2.817,0,0,0,10.17,9.033,1.579,1.579,0,0,0,8.767,10.538Z" style="fill:#fff"/></svg>
-          </i>
-          <i class="tool-icon">
-            <!-- SVG TailWind -->
-            <svg width="30" height="30"xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 54 33"><g clip-path="url(#prefix__clip0)"><path fill="#38bdf8" fill-rule="evenodd" d="M27 0c-7.2 0-11.7 3.6-13.5 10.8 2.7-3.6 5.85-4.95 9.45-4.05 2.054.513 3.522 2.004 5.147 3.653C30.744 13.09 33.808 16.2 40.5 16.2c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C36.756 3.11 33.692 0 27 0zM13.5 16.2C6.3 16.2 1.8 19.8 0 27c2.7-3.6 5.85-4.95 9.45-4.05 2.054.514 3.522 2.004 5.147 3.653C17.244 29.29 20.308 32.4 27 32.4c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C23.256 19.31 20.192 16.2 13.5 16.2z" clip-rule="evenodd"/></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h54v32.4H0z"/></clipPath></defs></svg>
-          </i>
-          <!-- Add more icons as needed -->
+          <!--Tools SVG-->
+          <i class="tool-icon"><img title="ToolName" width="30" height="30" src="images/SVG/docker_logo.svg"></i>
+          <i class="tool-icon"><img title="ToolName" width="30" height="30" src="images/SVG/docker_logo.svg"></i>
         </div>
+        <!--Project Content-->
+        <div class="project-content container-fluid">
+          <h3 class="project-title">ProjectName</h3>
+          <p class="project-description">
+            This is where the project description goes
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--Project Modal-->
+    <div class="modal fade" id="NameOfProjectModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content bg-transparent border-0">
+          <div class="modal-body p-0 bg-light container my-5 rounded">
+            <div class="row">
+              <div class="col-12 position-relative">
+                <h4 class="modal-title text-center py-3">
+                  Project Title
+                </h4>
+                <button type="button" class="btn-close position-absolute top-0 end-0 m-4" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              
+              <div class="row g-0">
+                <div class="col-md-6 p-4">
+                  <div class="h-90 d-flex flex-column overflow-y-auto" style="max-height: 450px;">
 
-        <!-- Project content -->
+                    <p>
+                      Project description 
+                    </p>
+
+                  </div>
+                </div>
+                <div class="col-md-6 p-2">
+                  <div id="NameOfProjectModalCarousel" class="carousel slide">
+                    <div class="carousel-inner rounded">
+                      <div class="carousel-item active">
+                        <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
+                          <div class="ratio ratio-1x1 bg-light rounded overflow-hidden" style="max-width: 450px; width: 100%;">
+                            <img src="" class="img-fluid w-100 h-100" alt="Descriptive alt text" style="object-fit: contain;"/>
+                          </div>
+                        </div>
+                        <p class="text-center">Image Desc</p>
+                      </div>
+                      <div class="carousel-item">
+                        <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
+                          <div class="ratio ratio-1x1 bg-light rounded overflow-hidden" style="max-width: 450px; width: 100%;">
+                            <img src="" class="img-fluid w-100 h-100" alt="Descriptive alt text" style="object-fit: contain;"/>
+                          </div>
+                        </div>
+                        <p class="text-center">Image Desc</p>
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#NameOfProjectModalCarousel" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true" style="filter: invert(1);"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#NameOfProjectModalCarousel" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true" style="filter: invert(1);"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="bg-secondary" style="width: 100%; height: 1px"></div>
+                <!--ToolsUsed-->
+                <p class="m-2">
+                  <i><img tittle="ToolName" width="30" height="30" src="images/SVG/opengl_logo.svg"></i>
+                  <i><img tittle="ToolName" width="30" height="30" src="images/SVG/opengl_logo.svg"></i>
+                  <i><img tittle="ToolName" width="30" height="30" src="images/SVG/opengl_logo.svg"></i>
+                </p>
+                <a href="projectgitlink" title="Git Project Repo" target="_blank" class="position-absolute bottom-0 end-0 m-2 text-decoration-none text-reset">View Git Repo <img width="30" height="30" src="images/SVG/GitHub_logo.svg"/></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 col-sm-12 mb-4" alt="Bachelor Project" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#BachelorProjectModal">
+      <div class="project-card">
+        <div class="carousel slide shadow-lg" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <!--Images in the carousel-->
+            <div class="carousel-item active"><img src="images/Bachelor/Side by side comparison.JPG" class="d-block w-100" alt="Comparison between old and new design"></div>
+            <div class="carousel-item"><img src="images/Bachelor/ItemInfo.JPG" class="d-block w-100" alt="Page describing a single item, where users select what they want to rent"></div>
+            <div class="carousel-item"><img src="images/Bachelor/Reservationpage.JPG" class="d-block w-100" alt="Page showing what the user has reserved"></div>
+          
+          </div>
+        </div>
+        <!--Tools used in project-->
+        <div class="tools-bar">
+          <!--Tools SVG-->
+          <i class="tool-icon"><img title="React" width="30" height="30" src="images/SVG/react_logo.svg"></i>
+          <i class="tool-icon"><img title="TailWind" width="30" height="30" src="images/SVG/Tailwind_CSS_logo.svg"></i>
+          <i class="tool-icon"><img title="TypeScript" width="30" height="30" src="images/SVG/TypeScript_logo.svg"></i>
+          <i class="tool-icon"><img title="Axios" width="30" height="30" src="images/SVG/Axios_logo.svg"></i>
+          <i class="tool-icon"><img title="SQLite" width="30" height="30" src="images/SVG/sqllite_logo.svg"></i>
+          <i class="tool-icon"><img title="NginX" width="30" height="30" src="images/SVG/NginX_logo.svg"></i>
+          <i class="tool-icon"><img title="Docker" width="30" height="30" src="images/SVG/docker_logo.svg"></i>
+          <i class="tool-icon"><img title="Go" width="50" height="50" src="images/SVG/Go_logo.svg"></i>
+        </div>
+        <!--Project Content-->
         <div class="project-content container-fluid">
           <h3 class="project-title">Bachelor Project</h3>
           <p class="project-description">
@@ -208,118 +270,128 @@
         </div>
       </div>
     </div>
-    <!-- Modal for project TODO: rename the id to match content above-->
-    <div class="modal fade"  id="modal1" tabindex="-1" aria-hidden="true">
+    <!--Project Modal-->
+    <div class="modal fade" id="BachelorProjectModal" tabindex="-1" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content bg-transparent border-0">
           <div class="modal-body p-0 bg-light container my-5 rounded">
             <div class="row">
+              <div class="col-12 position-relative">
+                <h4 class="modal-title text-center py-3">
+                  Bachelor Project
+                </h4>
+                <button type="button" class="btn-close position-absolute top-0 end-0 m-4" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              
+              <div class="row g-0">
+                <div class="col-md-6 p-4">
+                  <div class="h-90 d-flex flex-column overflow-y-auto" style="max-height: 450px;">
+                    <p>
+                      Website for lending out sports equipment, for a local non-profit organization. This was a group project where we had full control over the design and implementation of the website. <br>
+                      <br>
+                      What I learned:
+                      <ul>
+                        <li>Frontend development</li>
+                        <li>System design</li>
+                        <li>Backend development</li>
+                        <li>Database design</li>
+                        <li>Web tokens</li>
+                        <li>Dockerizing</li>
+                        <li>Communication between fields of communication</li>
+                        <li>Working in a team</li>
+                        <li>Scrum development</li>
+                        <li>User testing</li>
+                      </ul>
+                      I was responsible for the frontend development and Scrum leader of the team. 
+                      I also contributed to the backend development and designing the stack.
+                      <br>
+                      During the project we faced many challenges, one of the biggest was the communication between us the developers and our employer. 
+                      The employer had no experience with web development, this made it difficult to discuss the requirements and expectations for the project. 
+                      That is until I made a wireframe of the website and presented it to the employer. This made it much easier to discuss the 
+                      requirements and explain the technical aspects of the project. After that we got started with designing the stack.
+                      <ul>
+                        <li> <strong>React:</strong> Comunity support and experience</li>
+                        <li> <strong>Axios:</strong> Promise-based API calls for faster load</li>
+                        <li> <strong>TypeScript:</strong> Easy to read code, debugging and Works great with Axios</li>
+                        <li> <strong>TailWind:</strong> Fast and good-looking styling</li>
+                        <li> <strong>Go:</strong> Fast and easy to use, great for backend development</li>
+                        <li> <strong>NginX:</strong> Reverse proxy for the Go backend</li>
+                        <li> <strong>SQLite:</strong> Easy to use and fast database</li>
+                        <li> <strong>Docker:</strong> Easy to scale and use for employer</li>
+                      </ul>
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-6 p-2">
+                  <div id="BachelorProjectModalCarousel" class="carousel slide">
+                    <div class="carousel-inner rounded">
+                      <div class="carousel-item active">
+                        <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
+                          <div class="ratio ratio-1x1 bg-light rounded overflow-hidden" style="max-width: 450px; width: 100%;">
+                            <img src="images/Bachelor/Side by side comparison.JPG" class="img-fluid w-100 h-100" alt="Comparison between old and new design" style="object-fit: contain;"/>
+                          </div>
+                        </div>
+                        <p class="text-center">Comparison between old and new design</p>
+                      </div>
+                      <div class="carousel-item">
+                        <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
+                          <div class="ratio ratio-1x1 bg-light rounded overflow-hidden" style="max-width: 450px; width: 100%;">
+                            <img src="images/Bachelor/ItemInfo.JPG" class="img-fluid w-100 h-100" alt="Page describing a single item, where users select what they want to rent" style="object-fit: contain;"/>
+                          </div>
+                        </div>
+                        <p class="text-center">Page describing a single item, where users select what they want to rent</p>
+                      </div>
+                      <div class="carousel-item">
+                        <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
+                          <div class="ratio ratio-1x1 bg-light rounded overflow-hidden" style="max-width: 450px; width: 100%;">
+                            <img src="images/Bachelor/Reservationpage.JPG" class="img-fluid w-100 h-100" alt="Page showing what the user has reserved" style="object-fit: contain;"/>
+                          </div>
+                        </div>
+                        <p class="text-center">Page showing what the user has reserved</p>
+                      </div>
+                      <div class="carousel-item">
+                        <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
+                          <div class="ratio ratio-1x1 bg-light rounded overflow-hidden" style="max-width: 450px; width: 100%;">
+                            <img src="images/Bachelor/promise_based_fetching.JPG" class="img-fluid w-100 h-100" alt="Code preview of promise based fetching, combining Axios and TypeScript" style="object-fit: contain;"/>
+                          </div>
+                        </div>
+                        <p class="text-center">Code preview of promise based fetching, combining Axios and TypeScript</p>
+                      </div>
+                      <div class="carousel-item">
+                        <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
+                          <div class="ratio ratio-1x1 bg-light rounded overflow-hidden" style="max-width: 450px; width: 100%;">
+                            <img src="images/Bachelor/System arkitecture.JPG" class="img-fluid w-100 h-100" alt="Modell of the tech stack used" style="object-fit: contain;"/>
+                          </div>
+                        </div>
+                        <p class="text-center">Modell of the tech stack used</p>
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#BachelorProjectModalCarousel" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true" style="filter: invert(1);"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#BachelorProjectModalCarousel" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true" style="filter: invert(1);"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
               <div class="col-12">
-                <h4 class="modal-title text-center py-3">Bachelor Project</h4>
-              </div>
-            </div>
-            <div class="row g-0">
-              <div class="col-md-6 p-4" style="max-height:530px; overflow-y:auto;">
-                <div class="h-90 d-flex flex-column">
-                  <p>
-                     Website for lending out sports equipment, for a local non-profit organization. This was a group project where we had full control over the design and implementation of the website. <br>
-                    <br>
-                    What I learned:
-                    <ul>
-                      <li>Frontend development</li>
-                      <li>System design</li>
-                      <li>Backend development</li>
-                      <li>Database design</li>
-                      <li>Web tokens</li>
-                      <li>Dockerizing</li>
-                      <li>Communication between fields of communication</li>
-                      <li>Working in a team</li>
-                      <li>Scrum development</li>
-                      <li>User testing</li>
-                    </ul>
-                    I was responsible for the frontend development and Scrum leader of the team. 
-                    I also contributed to the backend development and designing the stack.
-                    <br>
-                    During the project we faced many challenges, one of the biggest was the communication between us the developers and our employer. 
-                    The employer had no experience with web development, this made it difficult to discuss the requirements and expectations for the project. 
-                    That is until I made a wireframe of the website and presented it to the employer. This made it much easier to discuss the 
-                    requirements and explain the technical aspects of the project. After that we got started with designing the stack.
-                    <ul>
-                      <li> <strong>React:</strong> Comunity support and experience</li>
-                      <li> <strong>Axios:</strong> Promise-based API calls for faster load</li>
-                      <li> <strong>TypeScript:</strong> Easy to read code, debugging and Works great with Axios</li>
-                      <li> <strong>TailWind:</strong> Fast and good-looking styling</li>
-                      <li> <strong>Go:</strong> Fast and easy to use, great for backend development</li>
-                      <li> <strong>NginX:</strong> Reverse proxy for the Go backend</li>
-                      <li> <strong>SQLite:</strong> Easy to use and fast database</li>
-                      <li> <strong>Docker:</strong> Easy to scale and use for employer</li>
-                    </ul>
-                    <a href="https://hdl.handle.net/11250/3137502" target="_blank"><strong>Read the thesis paper</strong></a>
-                    <br>
-                  </p>
-                  <div class="ps-4 bg-light rounded-bottom" style="position: absolute; left: 0; bottom: 0; width: 100%; ">
-                    <div class="bg-secondary" style="width: 50%; height: 1px"></div>
-                    <i>
-                      <!-- SVG React -->
-                      <svg width="30" height="30" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.6789 15.9759C18.6789 14.5415 17.4796 13.3785 16 13.3785C14.5206 13.3785 13.3211 14.5415 13.3211 15.9759C13.3211 17.4105 14.5206 18.5734 16 18.5734C17.4796 18.5734 18.6789 17.4105 18.6789 15.9759Z" fill="#53C1DE"/><path fill-rule="evenodd" clip-rule="evenodd" d="M24.7004 11.1537C25.2661 8.92478 25.9772 4.79148 23.4704 3.39016C20.9753 1.99495 17.7284 4.66843 16.0139 6.27318C14.3044 4.68442 10.9663 2.02237 8.46163 3.42814C5.96751 4.82803 6.73664 8.8928 7.3149 11.1357C4.98831 11.7764 1 13.1564 1 15.9759C1 18.7874 4.98416 20.2888 7.29698 20.9289C6.71658 23.1842 5.98596 27.1909 8.48327 28.5877C10.9973 29.9932 14.325 27.3945 16.0554 25.7722C17.7809 27.3864 20.9966 30.0021 23.4922 28.6014C25.9956 27.1963 25.3436 23.1184 24.7653 20.8625C27.0073 20.221 31 18.7523 31 15.9759C31 13.1835 26.9903 11.7923 24.7004 11.1537ZM24.4162 19.667C24.0365 18.5016 23.524 17.2623 22.8971 15.9821C23.4955 14.7321 23.9881 13.5088 24.3572 12.3509C26.0359 12.8228 29.7185 13.9013 29.7185 15.9759C29.7185 18.07 26.1846 19.1587 24.4162 19.667ZM22.85 27.526C20.988 28.571 18.2221 26.0696 16.9478 24.8809C17.7932 23.9844 18.638 22.9422 19.4625 21.7849C20.9129 21.6602 22.283 21.4562 23.5256 21.1777C23.9326 22.7734 24.7202 26.4763 22.85 27.526ZM9.12362 27.5111C7.26143 26.47 8.11258 22.8946 8.53957 21.2333C9.76834 21.4969 11.1286 21.6865 12.5824 21.8008C13.4123 22.9332 14.2816 23.9741 15.1576 24.8857C14.0753 25.9008 10.9945 28.557 9.12362 27.5111ZM2.28149 15.9759C2.28149 13.874 5.94207 12.8033 7.65904 12.3326C8.03451 13.5165 8.52695 14.7544 9.12123 16.0062C8.51925 17.2766 8.01977 18.5341 7.64085 19.732C6.00369 19.2776 2.28149 18.0791 2.28149 15.9759ZM9.1037 4.50354C10.9735 3.45416 13.8747 6.00983 15.1159 7.16013C14.2444 8.06754 13.3831 9.1006 12.5603 10.2265C11.1494 10.3533 9.79875 10.5569 8.55709 10.8297C8.09125 9.02071 7.23592 5.55179 9.1037 4.50354ZM20.3793 11.5771C21.3365 11.6942 22.2536 11.85 23.1147 12.0406C22.8562 12.844 22.534 13.6841 22.1545 14.5453C21.6044 13.5333 21.0139 12.5416 20.3793 11.5771ZM16.0143 8.0481C16.6054 8.66897 17.1974 9.3623 17.7798 10.1145C16.5985 10.0603 15.4153 10.0601 14.234 10.1137C14.8169 9.36848 15.414 8.67618 16.0143 8.0481ZM9.8565 14.5444C9.48329 13.6862 9.16398 12.8424 8.90322 12.0275C9.75918 11.8418 10.672 11.69 11.623 11.5748C10.9866 12.5372 10.3971 13.5285 9.8565 14.5444ZM11.6503 20.4657C10.6679 20.3594 9.74126 20.2153 8.88556 20.0347C9.15044 19.2055 9.47678 18.3435 9.85796 17.4668C10.406 18.4933 11.0045 19.4942 11.6503 20.4657ZM16.0498 23.9915C15.4424 23.356 14.8365 22.6531 14.2448 21.8971C15.4328 21.9423 16.6231 21.9424 17.811 21.891C17.2268 22.6608 16.6369 23.3647 16.0498 23.9915ZM22.1667 17.4222C22.5677 18.3084 22.9057 19.1657 23.1742 19.9809C22.3043 20.1734 21.3652 20.3284 20.3757 20.4435C21.015 19.4607 21.6149 18.4536 22.1667 17.4222ZM18.7473 20.5941C16.9301 20.72 15.1016 20.7186 13.2838 20.6044C12.2509 19.1415 11.3314 17.603 10.5377 16.0058C11.3276 14.4119 12.2404 12.8764 13.2684 11.4158C15.0875 11.2825 16.9178 11.2821 18.7369 11.4166C19.7561 12.8771 20.6675 14.4086 21.4757 15.9881C20.6771 17.5812 19.7595 19.1198 18.7473 20.5941ZM22.8303 4.4666C24.7006 5.51254 23.8681 9.22726 23.4595 10.8426C22.2149 10.5641 20.8633 10.3569 19.4483 10.2281C18.6239 9.09004 17.7698 8.05518 16.9124 7.15949C18.1695 5.98441 20.9781 3.43089 22.8303 4.4666Z" fill="#53C1DE"/></svg>
-                    </i>
-                    <i>
-                      <!-- SVG TS-->
-                      <svg xmlns="http://www.w3.org/2000/svg" aria-label="TypeScript" role="img" viewBox="0 0 512 512" width="26" height="26" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><rect width="512" height="512" rx="15%" fill="#3178c6"></rect><path fill="#ffffff" d="m233 284h64v-41H118v41h64v183h51zm84 173c8.1 4.2 18 7.3 29 9.4s23 3.1 35 3.1c12 0 23-1.1 34-3.4c11-2.3 20-6.1 28-11c8.1-5.3 15-12 19-21s7.1-19 7.1-32c0-9.1-1.4-17-4.1-24s-6.6-13-12-18c-5.1-5.3-11-10-18-14s-15-8.2-24-12c-6.6-2.7-12-5.3-18-7.9c-5.2-2.6-9.7-5.2-13-7.8c-3.7-2.7-6.5-5.5-8.5-8.4c-2-3-3-6.3-3-10c0-3.4.89-6.5 2.7-9.3s4.3-5.1 7.5-7.1c3.2-2 7.2-3.5 12-4.6c4.7-1.1 9.9-1.6 16-1.6c4.2 0 8.6.31 13 .94c4.6.63 9.3 1.6 14 2.9c4.7 1.3 9.3 2.9 14 4.9c4.4 2 8.5 4.3 12 6.9v-47c-7.6-2.9-16-5.1-25-6.5s-19-2.1-31-2.1c-12 0-23 1.3-34 3.8s-20 6.5-28 12c-8.1 5.4-14 12-19 21c-4.7 8.4-7 18-7 30c0 15 4.3 28 13 38c8.6 11 22 19 39 27c6.9 2.8 13 5.6 19 8.3s11 5.5 15 8.4c4.3 2.9 7.7 6.1 10 9.5c2.5 3.4 3.8 7.4 3.8 12c0 3.2-.78 6.2-2.3 9s-3.9 5.2-7.1 7.2s-7.1 3.6-12 4.8c-4.7 1.1-10 1.7-17 1.7c-11 0-22-1.9-32-5.7c-11-3.8-21-9.5-28.1-15.44z"></path></g></svg>
-                    </i>
-                    <i>
-                      <!-- SVG Axios -->
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="30" height="30"><path fill="#5a29e4" d="m 34,43.977569 27.379067,-22.912155 0.0385,91.494586 -9.3189,7.74007 -0.15403,-76.091455 z"  /><path fill="#5a29e4" d="M 96.961687,82.322502 69.582627,105.23466 69.544127,13.74007 78.863017,6 l 0.15403,76.091452 z"  /></svg>
-                    </i>
-                    <i>
-                      <!--SVG GO-->
-                      <svg version="1.1" width="50" height="50" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 254.5 225" style="enable-background:new 0 0 254.5 225;" xml:space="preserve"><style type="text/css">.st0{fill:#2DBCAF;}.st1{fill:#5DC9E1;}.st2{fill:#FDDD00;}.st3{fill:#CE3262;}.st4{fill:#00ACD7;}.st5{fill:#FFFFFF;}</style><g><g><g><g><path class="st4" d="M40.2,101.1c-0.4,0-0.5-0.2-0.3-0.5l2.1-2.7c0.2-0.3,0.7-0.5,1.1-0.5l35.7,0c0.4,0,0.5,0.3,0.3,0.6l-1.7,2.6c-0.2,0.3-0.7,0.6-1,0.6L40.2,101.1z"/></g></g></g><g><g><g><path class="st4" d="M25.1,110.3c-0.4,0-0.5-0.2-0.3-0.5l2.1-2.7c0.2-0.3,0.7-0.5,1.1-0.5l45.6,0c0.4,0,0.6,0.3,0.5,0.6l-0.8,2.4c-0.1,0.4-0.5,0.6-0.9,0.6L25.1,110.3z"/></g></g></g><g><g><g><path class="st4" d="M49.3,119.5c-0.4,0-0.5-0.3-0.3-0.6l1.4-2.5c0.2-0.3,0.6-0.6,1-0.6l20,0c0.4,0,0.6,0.3,0.6,0.7l-0.2,2.4c0,0.4-0.4,0.7-0.7,0.7L49.3,119.5z"/></g></g></g><g><g id="CXHf1q_3_"><g><g><path class="st4" d="M153.1,99.3c-6.3,1.6-10.6,2.8-16.8,4.4c-1.5,0.4-1.6,0.5-2.9-1c-1.5-1.7-2.6-2.8-4.7-3.8c-6.3-3.1-12.4-2.2-18.1,1.5c-6.8,4.4-10.3,10.9-10.2,19c0.1,8,5.6,14.6,13.5,15.7c6.8,0.9,12.5-1.5,17-6.6c0.9-1.1,1.7-2.3,2.7-3.7c-3.6,0-8.1,0-19.3,0c-2.1,0-2.6-1.3-1.9-3c1.3-3.1,3.7-8.3,5.1-10.9c0.3-0.6,1-1.6,2.5-1.6c5.1,0,23.9,0,36.4,0c-0.2,2.7-0.2,5.4-0.6,8.1c-1.1,7.2-3.8,13.8-8.2,19.6c-7.2,9.5-16.6,15.4-28.5,17c-9.8,1.3-18.9-0.6-26.9-6.6c-7.4-5.6-11.6-13-12.7-22.2c-1.3-10.9,1.9-20.7,8.5-29.3c7.1-9.3,16.5-15.2,28-17.3c9.4-1.7,18.4-0.6,26.5,4.9c5.3,3.5,9.1,8.3,11.6,14.1C154.7,98.5,154.3,99,153.1,99.3z"/></g><g><path class="st4" d="M186.2,154.6c-9.1-0.2-17.4-2.8-24.4-8.8c-5.9-5.1-9.6-11.6-10.8-19.3c-1.8-11.3,1.3-21.3,8.1-30.2c7.3-9.6,16.1-14.6,28-16.7c10.2-1.8,19.8-0.8,28.5,5.1c7.9,5.4,12.8,12.7,14.1,22.3c1.7,13.5-2.2,24.5-11.5,33.9c-6.6,6.7-14.7,10.9-24,12.8C191.5,154.2,188.8,154.3,186.2,154.6z M210,114.2c-0.1-1.3-0.1-2.3-0.3-3.3c-1.8-9.9-10.9-15.5-20.4-13.3c-9.3,2.1-15.3,8-17.5,17.4c-1.8,7.8,2,15.7,9.2,18.9c5.5,2.4,11,2.1,16.3-0.6C205.2,129.2,209.5,122.8,210,114.2z"/></g></g></g></g></g></svg>
-                    </i>
-                    <i>
-                      <!-- SVG Docker -->
-                      <svg width="30" height="30" viewBox="0 -35.5 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid"><g><path d="M250.715745,70.4971666 C244.951102,66.4973277 231.740464,64.997388 221.412146,66.9973071 C220.211179,56.9977092 214.68673,48.2480609 205.078993,40.4983724 L199.554544,36.4985331 L195.711449,42.248302 C190.90758,49.7480006 188.505646,60.2475786 189.226226,70.2471769 C189.46642,73.7470364 190.667387,79.9967847 194.270289,85.496564 C190.90758,87.4964838 183.941971,89.996383 174.814621,89.996383 L1.15476998,89.996383 L0.674383104,91.9963028 C-1.00697093,101.9959 -1.00697093,133.244645 18.6888904,157.243681 C33.5808831,175.492947 55.6786788,184.742575 84.7420842,184.742575 C147.672763,184.742575 194.270289,154.493791 216.127891,99.7459909 C224.774854,99.9959813 243.269748,99.7459909 252.637292,80.996745 C252.877486,80.4967649 253.357872,79.4968046 255.039227,75.7469554 L256,73.7470364 L250.715745,70.4971666 L250.715745,70.4971666 Z M139.986573,0 L113.565295,0 L113.565295,24.9989952 L139.986573,24.9989952 L139.986573,0 L139.986573,0 Z M139.986573,29.9987943 L113.565295,29.9987943 L113.565295,54.9977896 L139.986573,54.9977896 L139.986573,29.9987943 L139.986573,29.9987943 Z M108.761427,29.9987943 L82.3401495,29.9987943 L82.3401495,54.9977896 L108.761427,54.9977896 L108.761427,29.9987943 L108.761427,29.9987943 Z M77.5362814,29.9987943 L51.1150037,29.9987943 L51.1150037,54.9977896 L77.5362814,54.9977896 L77.5362814,29.9987943 L77.5362814,29.9987943 Z M46.311135,59.9975886 L19.8898576,59.9975886 L19.8898576,84.9965839 L46.311135,84.9965839 L46.311135,59.9975886 L46.311135,59.9975886 Z M77.5362814,59.9975886 L51.1150037,59.9975886 L51.1150037,84.9965839 L77.5362814,84.9965839 L77.5362814,59.9975886 L77.5362814,59.9975886 Z M108.761427,59.9975886 L82.3401495,59.9975886 L82.3401495,84.9965839 L108.761427,84.9965839 L108.761427,59.9975886 L108.761427,59.9975886 Z M139.986573,59.9975886 L113.565295,59.9975886 L113.565295,84.9965839 L139.986573,84.9965839 L139.986573,59.9975886 L139.986573,59.9975886 Z M171.211719,59.9975886 L144.790441,59.9975886 L144.790441,84.9965839 L171.211719,84.9965839 L171.211719,59.9975886 L171.211719,59.9975886 Z" fill="#2396ED" fill-rule="nonzero"></path></g></svg>
-                    </i>
-                    <i>
-                      <svg width="30" height="30" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><linearGradient id="a" x1="-118.318" y1="45.638" x2="-116.751" y2="45.638" gradientTransform="matrix(0, 11.486, 11.486, 0, -510.889, 1363.307)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#97d9f6"/><stop offset="0.92" stop-color="#0f80cc"/><stop offset="1" stop-color="#0f80cc"/></linearGradient></defs><title>file_type_sqlite</title><path d="M23.192,3.242H5.623A2.147,2.147,0,0,0,3.482,5.383V24.759A2.147,2.147,0,0,0,5.623,26.9H17.195C17.063,21.142,19.03,9.968,23.192,3.242Z" style="fill:#0f80cc"/><path d="M22.554,3.867H5.623A1.518,1.518,0,0,0,4.107,5.383V23.345a42.01,42.01,0,0,1,13.569-2.684A123.555,123.555,0,0,1,22.554,3.867Z" style="fill:url(#a)"/><path d="M27.29,2.608c-1.2-1.073-2.66-.642-4.1.634-.213.19-.426.4-.638.625A25.4,25.4,0,0,0,17.1,15a10.178,10.178,0,0,1,.634,1.822c.036.14.069.272.1.384.062.265.1.437.1.437s-.022-.083-.113-.346l-.059-.17c-.01-.027-.023-.059-.038-.094-.16-.373-.6-1.16-.8-1.5-.167.493-.315.954-.438,1.371a12.131,12.131,0,0,1,.908,2.8s-.03-.115-.171-.515a19.037,19.037,0,0,0-.9-1.708,4.037,4.037,0,0,0-.264,1.724,6.009,6.009,0,0,1,.493,1.383c.334,1.283.566,2.846.566,2.846s.008.1.02.263a26.145,26.145,0,0,0,.065,3.205,11.362,11.362,0,0,0,.584,3.1l.18-.1a13.859,13.859,0,0,1-.478-4.628,35.269,35.269,0,0,1,1.938-9.688c2.01-5.308,4.8-9.568,7.35-11.6-2.326,2.1-5.474,8.9-6.417,11.418a45.656,45.656,0,0,0-2.254,8A6.211,6.211,0,0,1,21.39,20s1.233-1.521,2.674-3.693a26.206,26.206,0,0,0-2.755.733c-.7.294-.889.394-.889.394a23.939,23.939,0,0,1,4.215-2.007c2.676-4.215,5.592-10.2,2.656-12.824" style="fill:#003b57"/></svg>
-                    </i>
-                    <i>
-                      <svg width="30" height="30" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><title>file_type_nginx</title><path d="M15.948,2h.065a10.418,10.418,0,0,1,.972.528Q22.414,5.65,27.843,8.774a.792.792,0,0,1,.414.788c-.008,4.389,0,8.777-.005,13.164a.813.813,0,0,1-.356.507q-5.773,3.324-11.547,6.644a.587.587,0,0,1-.657.037Q9.912,26.6,4.143,23.274a.7.7,0,0,1-.4-.666q0-6.582,0-13.163a.693.693,0,0,1,.387-.67Q9.552,5.657,14.974,2.535c.322-.184.638-.379.974-.535" style="fill:#019639"/><path d="M8.767,10.538q0,5.429,0,10.859a1.509,1.509,0,0,0,.427,1.087,1.647,1.647,0,0,0,2.06.206,1.564,1.564,0,0,0,.685-1.293c0-2.62-.005-5.24,0-7.86q3.583,4.29,7.181,8.568a2.833,2.833,0,0,0,2.6.782,1.561,1.561,0,0,0,1.251-1.371q.008-5.541,0-11.081a1.582,1.582,0,0,0-3.152,0c0,2.662-.016,5.321,0,7.982-2.346-2.766-4.663-5.556-7-8.332A2.817,2.817,0,0,0,10.17,9.033,1.579,1.579,0,0,0,8.767,10.538Z" style="fill:#fff"/></svg>
-                    </i>
-                    <i>
-                      <svg width="30" height="30"xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 54 33"><g clip-path="url(#prefix__clip0)"><path fill="#38bdf8" fill-rule="evenodd" d="M27 0c-7.2 0-11.7 3.6-13.5 10.8 2.7-3.6 5.85-4.95 9.45-4.05 2.054.513 3.522 2.004 5.147 3.653C30.744 13.09 33.808 16.2 40.5 16.2c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C36.756 3.11 33.692 0 27 0zM13.5 16.2C6.3 16.2 1.8 19.8 0 27c2.7-3.6 5.85-4.95 9.45-4.05 2.054.514 3.522 2.004 5.147 3.653C17.244 29.29 20.308 32.4 27 32.4c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C23.256 19.31 20.192 16.2 13.5 16.2z" clip-rule="evenodd"/></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h54v32.4H0z"/></clipPath></defs></svg>
-                    </i>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 p-2">
-                <div id="modal1Carousel" class="carousel slide">
-                  <div class="carousel-inner rounded">
-                    <div class="carousel-item active">
-                      <img src="images/Bachelor/Side by side comparison.JPG" class="d-block w-100" alt="Inventory page design">
-                      <p class="text-center">Early Design vs Final design of inventory page</p>
-                    </div>
-                    <div class="carousel-item">
-                      <img src="images/Bachelor/ItemInfo.JPG" class="d-block w-100" alt="Items description page">
-                      <p class="text-center">Early Design vs Final design of Items description page</p>
-                    </div>
-                    <div class="carousel-item">
-                      <img src="images/Bachelor/System arkitecture.JPG" class="d-block w-100" alt="System architecture">
-                      <p class="text-center">System architecture</p>
-                    </div>
-                    <div class="carousel-item">
-                      <img src="images/Bachelor/promise_based_fetching.JPG" class="d-block w-100" alt="Promise based fetching">
-                      <p class="text-center">Promise based fetching code for async load time</p>
-                    </div>
-                  </div>
-                  <button class="carousel-control-prev" type="button" data-bs-target="#modal1Carousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                  </button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#modal1Carousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                  </button>
-                </div>
+                <div class="bg-secondary" style="width: 100%; height: 1px"></div>
+                <!--ToolsUsed-->
+                <p class="m-2">
+                  <i><img title="React" width="30" height="30" src="images/SVG/react_logo.svg"></i>
+                  <i><img title="TailWind" width="30" height="30" src="images/SVG/Tailwind_CSS_logo.svg"></i>
+                  <i><img title="TypeScript" width="30" height="30" src="images/SVG/TypeScript_logo.svg"></i>
+                  <i><img title="Axios" width="30" height="30" src="images/SVG/Axios_logo.svg"></i>
+                  <i><img title="SQLite" width="30" height="30" src="images/SVG/sqllite_logo.svg"></i>
+                  <i><img title="NginX" width="30" height="30" src="images/SVG/NginX_logo.svg"></i>
+                  <i><img title="Docker" width="30" height="30" src="images/SVG/docker_logo.svg"></i>
+                  <i><img title="Go" width="50" height="50" src="images/SVG/Go_logo.svg"></i>
+                </p>
+                <a href="https://hdl.handle.net/11250/3137502" title="Git Project Repo" target="_blank" class="position-absolute bottom-0 end-0 m-2 text-decoration-none text-reset">Read thesis paper <img width="30" height="30" src="images/SVG/ntnu_logo.svg"/></a>
               </div>
             </div>
           </div>
@@ -327,6 +399,166 @@
       </div>
     </div>
     
+    <div class="col-md-4 col-sm-12 mb-4" alt="Graphics Engine Sokoban" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#GraphicsEngineSokoban">
+      <div class="project-card">
+        <div class="carousel slide shadow-lg" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <!--Images in the carousel-->
+            <div class="carousel-item active"><img src="images/Graphics/Assignment 01.06.2025 16_59_38.png" class="d-block w-100" alt="Image of project with textures"></div>
+            <div class="carousel-item"><img src="images/Graphics/Assignment 01.06.2025 17_00_13.png" class="d-block w-100" alt="Image of project without textures"></div>
+          </div>
+        </div>
+        <!--Tools used in project-->
+        <div class="tools-bar">
+          <!--Tools SVG-->
+          <i class="tool-icon"><img title="OpenGl" width="30" height="30" src="images/SVG/opengl_logo.svg"></i>
+          <i class="tool-icon"><img title="C++" width="30" height="30" src="images/SVG/CPP_logo.svg"></i>
+          <i class="tool-icon"><img title="Cmake" width="30" height="30" src="images/SVG/CMake_logo.svg"></i>
+          <i class="tool-icon"><img title="RenderDoc" width="30" height="30" src="images/SVG/RenderDoc_logo.svg"></i>
+        </div>
+        <!--Project Content-->
+        <div class="project-content container-fluid">
+          <h3 class="project-title">Graphics Engine Sokoban</h3>
+          <p class="project-description">
+            OpenGL based graphics engine, capable of perspective, lighting, texturing and representing different materials. All demonstrated in my own interpretation of a 3D Sokoban game
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--Project Modal-->
+    <div class="modal fade" id="GraphicsEngineSokoban" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content bg-transparent border-0">
+          <div class="modal-body p-0 bg-light container my-5 rounded">
+            <div class="row">
+              <div class="col-12 position-relative">
+                <h4 class="modal-title text-center py-3">
+                  Graphics Engine Sokoban
+                </h4>
+                <button type="button" class="btn-close position-absolute top-0 end-0 m-4" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              
+              <div class="row g-0">
+                <div class="col-md-6 p-4">
+                  <div class="h-90 d-flex flex-column overflow-y-auto" style="max-height: 450px;">
+                    <p>
+                      OpenGL based graphics engine, capable of perspective, lighting, texturing and representing different materials.
+                      All demonstrated in my own interpretation of a 3D Sokoban game. <br>
+                      <br>
+                      What I learned:
+                      <ul>
+                        <li>OpenGL and the rendering pipeline</li>
+                        <li>Shaders and GLSL</li>
+                        <li>Matrix calculations</li>
+                        <li>Texture mapping</li>
+                        <li>Input handling</li>
+                        <li>GPU architecture</li>
+                        <li>CMake</li>
+                        <li>RenderDoc</li>
+                      </ul>
+                      This project was made over the period of a 3-day exam, it's purpose is to show off the graphics engine I made over the course. Because of this writing 
+                      clean code and modularity was of great importance, as it needed to handle whatever the exam required of it. Some examples of this are the input system.
+                      <br><br>
+                      The input system consists of: declaration function, where you specify what inputs to listen to, a map, where each input is mapped to an int representing its state (2 = pressed this frame, 1 = being held, 0 = not pressed, -1 = just released) and a 
+                      function that is called each frame, where the input system automatically updates the map. <br>
+                      The input system simplifies the process of reading IO, where instead of constantly having to parse a pointer to the current screen and a key value, then comparing that result to last frame, 
+                      you can simply look up the value of the key, as seen in the example images. I also added a function that return true if any of the keys given are being pressed, then since there are no timed events in the game, 
+                      I can run a function that updates the values in the GPU, only if a button that changes how the game is presented is pressed.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-6 p-2">
+                  <div id="GraphicsEngineSokobanCarousel" class="carousel slide">
+                    <div class="carousel-inner rounded">
+                      <div class="carousel-item active">
+                        <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
+                          <div class="ratio ratio-1x1 bg-light rounded overflow-hidden" style="max-width: 450px; width: 100%;">
+                            <video src="images/Graphics/Assignment 2025-05-31 19-25-39.mp4" alt="Video demonstration" class="d-block w-100 h-100" controls autoplay loop muted webkit-playsinline playsinline></video>
+                          </div>
+                        </div>
+                        <p class="text-center">Video demonstration</p>
+                      </div>
+                      <div class="carousel-item">
+                        <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
+                          <div class="ratio ratio-1x1 bg-light rounded overflow-hidden" style="max-width: 450px; width: 100%;">
+                            <img src="images/Graphics/Assignment 01.06.2025 16_59_38.png" class="img-fluid w-100 h-100" alt="Image of project with textures" style="object-fit: contain;"/>
+                          </div>
+                        </div>
+                        <p class="text-center">Image of project with textures</p>
+                      </div>
+                      <div class="carousel-item">
+                        <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
+                          <div class="ratio ratio-1x1 bg-light rounded overflow-hidden" style="max-width: 450px; width: 100%;">
+                            <img src="images/Graphics/VideoDemo.mp4" class="img-fluid w-100 h-100" alt="Image of project without textures" style="object-fit: contain;"/>
+                          </div>
+                        </div>
+                        <p class="text-center">Image of project without textures</p>
+                      </div>
+                      <div class="carousel-item">
+                        <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
+                          <div class="ratio ratio-1x1 bg-light rounded overflow-hidden" style="max-width: 450px; width: 100%;">
+                            <img src="images/Graphics/GraphicsObject.JPG" class="img-fluid w-100 h-100" alt="Code example of graphics object abstraction" style="object-fit: contain;"/>
+                          </div>
+                        </div>
+                        <p class="text-center">Code example of graphics object abstraction</p>
+                      </div>
+                      <div class="carousel-item">
+                        <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
+                          <div class="ratio ratio-1x1 bg-light rounded overflow-hidden" style="max-width: 450px; width: 100%;">
+                            <img src="images/Graphics/InstantiatingModels.JPG" class="img-fluid w-100 h-100" alt="Example of Instantiating different graphics objects" style="object-fit: contain;"/>
+                          </div>
+                        </div>
+                        <p class="text-center">Example of Instantiating different graphics objects</p>
+                      </div>
+                      <div class="carousel-item">
+                        <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
+                          <div class="ratio ratio-1x1 bg-light rounded overflow-hidden" style="max-width: 450px; width: 100%;">
+                            <img src="images/Graphics/InputSystemCode.JPG" class="img-fluid w-100 h-100" alt="Code handeling user input and maping each key with a value" style="object-fit: contain;"/>
+                          </div>
+                        </div>
+                        <p class="text-center">Code handeling user input and maping each key with a value</p>
+                      </div>
+                      <div class="carousel-item">
+                        <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
+                          <div class="ratio ratio-1x1 bg-light rounded overflow-hidden" style="max-width: 450px; width: 100%;">
+                            <img src="images/Graphics/RenderDocMesh.JPG" class="img-fluid w-100 h-100" alt="RenderDoc as debugging tool inspecting the floor modell" style="object-fit: contain;"/>
+                          </div>
+                        </div>
+                        <p class="text-center">RenderDoc as debugging tool inspecting the floor modell</p>
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#GraphicsEngineSokobanCarousel" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true" style="filter: invert(1);"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#GraphicsEngineSokobanCarousel" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true" style="filter: invert(1);"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="bg-secondary" style="width: 100%; height: 1px"></div>
+                <!--ToolsUsed-->
+                <p class="m-2">
+                  <i><img title="OpenGl" width="30" height="30" src="images/SVG/opengl_logo.svg"></i>
+                  <i><img title="C++" width="30" height="30" src="images/SVG/CPP_logo.svg"></i>
+                  <i><img title="Cmake" width="30" height="30" src="images/SVG/CMake_logo.svg"></i>
+                  <i><img title="RenderDoc" width="30" height="30" src="images/SVG/RenderDoc_logo.svg"></i>
+                </p>
+                <a href="https://github.com/Ferdinand-Snapa/Graphics-Project" title="Git Project Repo" target="_blank" class="position-absolute bottom-0 end-0 m-2 text-decoration-none text-reset">View Git Repo <img width="30" height="30" src="images/SVG/GitHub_logo.svg"/></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!--Old cards-->
+
 
 
 
