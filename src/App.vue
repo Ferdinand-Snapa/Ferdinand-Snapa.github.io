@@ -1,20 +1,54 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import NavBar from './components/NavBar.vue'
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
+import PocketBase from 'pocketbase'
+import { fetchData } from './components/store.vue'
+//import useConfigurationStore from './components/store.vue'
+
+//const pb = new PocketBase('http://127.0.0.1:8090') 
+
 const animationEnabled = ref(true)
+const isDark = ref(false);
+
+function toggleTheme() {
+  console.log("toggle theme")
+  isDark.value = !isDark.value
+  applyTheme(isDark.value)
+
+  localStorage.setItem('theme', isDark.value ? 'dark' : 'light')
+}
+
+function applyTheme(value) {
+  if (value) {
+    document.documentElement.classList.add('dark')
+  } else {
+    document.documentElement.classList.remove('dark')
+  }
+}
+
+
+onMounted(async () => {
+  const saved = localStorage.getItem('theme')
+
+  if (saved) {
+    isDark.value = saved === 'dark'
+  } else {
+    // Optional: respect system preference
+    isDark.value = window.matchMedia('(prefers-color-scheme: dark)').matches
+  }
+
+  applyTheme(isDark.value)
+  
+
+  await fetchData()
+})
+
 </script>
 
 <template>
-  <NavBar :showAnimation="animationEnabled" />
-  
-  <HelloWorld msg="Vite + Vue"/>
-  <button class="text-3xl font-bold underline">
-    Hello world!
-  </button>
-  <div class="h-screen flex items-center justify-center">
-    <p>This is a simple Vue.js application.</p>
-  </div>
+  <NavBar :showAnimation="animationEnabled" :swapTheme="toggleTheme" />
+  <router-view class="z-5"/>
 </template>
 
 <style scoped>

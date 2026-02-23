@@ -1,4 +1,49 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-dark-test: #0000FF;
+  --color-test: #FF0000;
+
+  --color-primary: #1B3C53;
+  --color-dark-primary: #175673;
+
+  --color-secondary: #456882;
+  --color-dark-secondary: #A04C59;
+
+  --color-accent: #ff8000;
+  --color-dark-accent: #23708A;
+
+  --color-light: #D2C1B6;
+  --color-dark: #000000;
+
+  --color-ui: #F0F0F0;
+  --color-dark-ui: #1A1A1A;
+
+  --color-background: #d9dccd;
+  --color-dark-background: #2C2C2C;
+}
+
+@keyframes scrollX {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.scroll-x {
+  animation: scrollX 20s linear infinite;
+  animation-play-state: running;
+}
+
+.scroll-x:hover {
+  animation-play-state: paused;
+}
+
+
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -6,13 +51,29 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  
+  background:
+       radial-gradient(circle at top center, rgba(59, 130, 246, 0.5),transparent 70%)
+     ;
+  background-color: var(--color-background);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+
+:root.dark {
+  background-color: var(--color-dark-background);
+  background: 
+          radial-gradient(ellipse 70% 55% at 50% 50%, rgba(255, 20, 147, 0.15), transparent 50%),
+            radial-gradient(ellipse 160% 130% at 10% 10%, rgba(0, 255, 255, 0.12), transparent 60%),
+            radial-gradient(ellipse 160% 130% at 90% 90%, rgba(138, 43, 226, 0.18), transparent 65%),
+            radial-gradient(ellipse 110% 50% at 80% 30%, rgba(255, 215, 0, 0.08), transparent 40%),
+            #000000
+          
+}
+
 
 a {
   font-weight: 500;
@@ -23,10 +84,18 @@ a:hover {
   color: #535bf2;
 }
 
+*{
+  --webkit-scrollbar{
+    display: none;
+  }
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 body {
+  
   margin: 0;
   display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -59,22 +128,17 @@ button:focus-visible {
   padding: 2em;
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
 }
+
+#app {
+  margin: 0px;
+  padding: 0px;
+}
+

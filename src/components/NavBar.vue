@@ -1,20 +1,33 @@
 <script setup lang="ts">
-import { ref, onMounted, computed, watch } from 'vue'
+import { ref, onMounted, computed, watch, nextTick } from 'vue'
+import { data, setPrefLang } from './store.vue'
 
 import FSLogo from '../assets/svgTemplate/FSLogo.vue'
-import listSVG from '../assets/svg/list.svg'
-import searchSVG from '../assets/svg/search.svg'
+import listSVG from '../assets/svg/list.vue'
+import githubSVG from '../assets/svg/github_logo.vue'
+import settingsSVG from '../assets/svg/search.vue'
+import GBflagSVG from '../assets/svg/GBflag.vue'
+import NOflagSVG from '../assets/svg/NOflag.vue'
+import MoonSVG from '../assets/svg/Moon.vue'
+import SunSVG from '../assets/svg/Sun.vue'
 
 enum AnimationStates {
     Initial,
     Unwrap,
     FadeInnPage, // + Move Nav
     FadeInnNavButton,
-    Finished,
+    Finished
+}
+
+enum OpenStates {
+    Closed,
+    NavOpen,
+    SettingsOpen
 }
 
 const props = defineProps({
   showAnimation: Boolean,
+  swapTheme: Function
 })
 
 const fontstyling : string = 'text-md lg:text-4xl text-gray-700'
@@ -29,7 +42,7 @@ const InitNavSize : string = 'max-w-4/5 max-h-4/5 size-80 ms:size-160 aspect-1/1
 
 //FadeInnPage -> FadeInnNavButton
 const FadeInnPageToFadeInnNavButtonTime : number = 1000
-const FinalNavSize : string = 'mt-1 w-4/5 md:w-3/5 h-1/20 md:h-1/10 min-h-16  mb-[80vh] rounded-[16vh]'
+const FinalNavSize : string = 'mt-1 w-4/5 lg:w-2/5 h-1/20 lg:h-1/12 min-h-16  mb-[80vh] rounded-[16vh]'
 const FadeTimeTW : string = 'duration-1000'
 
 //FadeInnNavButton -> Finished
@@ -40,7 +53,7 @@ const FadeInnNavButtonToFinishedTimeTW : String = 'duration-1000'
 
 
 //StateValues
-const open = ref<boolean>(false)
+const openState = ref<OpenStates>(OpenStates.Closed)
 
 const AnimationState = ref<AnimationStates>(props.showAnimation ? AnimationStates.Initial : AnimationStates.Finished)
 
@@ -115,48 +128,124 @@ const skipAnimation = () => {
     FadeInnNavButtonToFinished()
 }
 
+const closeMenu = () => {
+    openState.value = OpenStates.Closed
+}
+
+const searchInput = ref<HTMLInputElement | null>(null)
+
+
 </script>
 
 <template>
     <div @click="skipAnimation">
         <div
         v-if="animating"
-        class="z-10 fixed inset-0 bg-gray-300 transition-opacity ease-in-out"
+        class="z-15 fixed inset-0 bg-gray-300 transition-opacity ease-in-out"
         :class="bgOpacity + ' ' + (animSkipped ? skipDurationTW : FadeTimeTW)" />
     </div>
     <div class="fixed inset-0 flex flex-col items-center justify-center z-20 pointer-events-none">
-        <div class="rounded-[8vh] bg-green-700 ease-in-out flex flex-row-center gap-5 content-fit pointer-events-none drop-shadow-xl/50"
+        <div class=" ease-in-out flex flex-row-center gap-5 content-fit pointer-events-none drop-shadow-xl/50 z-20"
             :class="navSize + ' ' + (animSkipped ? skipDurationTW : FadeTimeTW)">
-            <img @click="() => {console.log('List icon clicked')}"
+            <div class="absolute w-1/1 h-1/1 bg-primary dark:bg-dark-primary rounded-[8vh] -z-10 drop-shadow-xl/50"/>
+
+            <listSVG @click="() => {openState = openState == OpenStates.NavOpen ?  OpenStates.Closed : OpenStates.NavOpen}"
                 v-if="AnimationState >= AnimationStates.FadeInnNavButton"
-                class="transition-opacity ease-in-out aspect-square flex-1/3 pointer-events-auto cursor-pointer"
+                class="transition-opacity ease-in-out aspect-square flex-1/3 pointer-events-auto cursor-pointer fill-light dark:fill-dark"
                 :class="navButtonOpacity + ' ' + (animSkipped ? skipDurationTW : FadeInnNavButtonToFinishedTimeTW)"
-                :src="listSVG"
+            />
+            <router-link :to="{name: 'Home'}" @click="closeMenu" :class="'stroke-light dark:stroke-dark flex-1/3 pointer-events-auto cursor-pointer flex'">
+                <FSLogo
+                    :class="'aspect-square stroke-light dark:stroke-dark stroke-2 pointer-events-auto cursor-pointer flex-1/1'"
+                />
+            </router-link>
+            
+
+            <settingsSVG @click="() => {
+                openState = openState == OpenStates.SettingsOpen ? OpenStates.Closed : OpenStates.SettingsOpen
+                }"
+                v-if="AnimationState >= AnimationStates.FadeInnNavButton"
+                class="transition-transform ease-in-out aspect-square my-2 pointer-events-auto cursor-pointer justify-end fill-light dark:fill-dark flex-1/3"
+                :class="`${navButtonOpacity} ${animSkipped ? skipDurationTW : FadeInnNavButtonToFinishedTimeTW} ${openState === OpenStates.SettingsOpen ? 'rotate-0' : '-rotate-180'}`"
+
             />
 
-            <FSLogo @click="() => {console.log('FSLogo clicked')}"
-                    :class="'aspect-square stroke-black stroke-2 flex-1/3  pointer-events-auto cursor-pointer'"
-            />
+            
 
-            <img @click="() => {console.log('Search icon clicked')}"
-                v-if="AnimationState >= AnimationStates.FadeInnNavButton"
-                class="transition-opacity ease-in-out aspect-square flex-1/3 my-2 pointer-events-auto cursor-pointer"
-                :class="navButtonOpacity + ' ' + (animSkipped ? skipDurationTW : FadeInnNavButtonToFinishedTimeTW)"
-                :src="searchSVG"
-            />
+            <!--NavOptions-->
+            <div class="mt-9 absolute w-1/1 duration-300 bg-light dark:bg-dark  rounded-b-[4vh] -z-20 ease-in-out overflow-hidden"
+                :class="openState === OpenStates.NavOpen ? 'h-58' : 'h-[0vh]'">
+                <div class="flex flex-col pt-[5vh] items-start">
+                    <router-link :to="{name: 'About'}" @click="closeMenu" class="ml-[6.25%] text-dark dark:text-light pointer-events-auto">About me</router-link>
+                    <div class="h-px mx-5 w-7/8 bg-dark dark:bg-light self-center my-2"></div>
+                    <router-link :to="{name: 'Collection'}" @click="closeMenu" class="ml-[6.25%] text-dark dark:text-light pointer-events-auto">Collection</router-link >
+                    <div class="h-px mx-5 w-7/8 bg-dark dark:bg-light self-center my-2"></div>
+                    <router-link :to="{name: 'Contact'}" @click="closeMenu" class="ml-[6.25%] text-dark dark:text-light pointer-events-auto">Contact</router-link >
+                    <div class="h-px mx-5 w-7/8 bg-dark dark:bg-light self-center mt-2"></div>
+
+                    <div class="flex w-full h-full items-center gap-2 justify-self-end py-4 fill-dark dark:fill-light">
+                        <githubSVG href="#" class="flex-1/3 h-8 px-8 "></githubSVG>
+                        <div class="w-px h-6 bg-dark dark:bg-light mx-1"></div>
+                        <githubSVG href="#" class="flex-1/3 h-8 px-8 "></githubSVG>
+                        <div class="w-px h-6 bg-dark dark:bg-light mx-1"></div>
+                        <githubSVG href="#" class="flex-1/3 h-8 px-8 "></githubSVG>
+                    </div>
+                </div>
+            </div>
+            <!--SettingsBar-->
+            <div class="mt-9 inset-0 absolute w-1/1 duration-300 bg-secondary dark:bg-dark-secondary rounded-b-[4vh] -z-20 ease-in-out overflow-hidden"
+                :class="openState === OpenStates.SettingsOpen ? 'h-28' : 'h-[0vh]'">
+                <!--Content of search results-->
+                <div class="flex flex-row pt-[7vh] items-center  justify-center">
+                    <!--Lang select-->
+                    <div class="flex-1/3 flex flex-row gap-4 justify-center cursor-pointer">
+                        <GBflagSVG 
+                            @click="() => setPrefLang('en')"
+                            class="h-8 pointer-events-auto rounded-xl"
+                            :class="data.prefLang === 'en' ? '' : 'grayscale' "/>
+                        <div class="h-8 text-xl">/</div>
+                        <NOflagSVG
+                            @click="() => setPrefLang('no')"
+                            class="h-8 pointer-events-auto rounded-xl"
+                            :class="data.prefLang === 'no' ? '' : 'grayscale'"/>
+                    </div>
+                    <div class="flex-1/3 pointer-events-auto cursor-pointer relative" @click="swapTheme">
+                        <SunSVG
+                            class="h-14 rotate-90 fill-yellow-500 dark:rotate-0 dark:h-0 rounded-xl absolute transition-all duration-1000 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 dark:fill-gray-500"
+                        />
+                        <MoonSVG
+                            class="h-8 fill-yellow-500 rounded-xl absolute transition-all duration-500 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 dark:fill-gray-500 justify-center"
+                        />
+                        <MoonSVG
+                            class="h-8 rotate-180 fill-yellow-500 rounded-xl absolute transition-all duration-500 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 dark:rotate-0 dark:fill-gray-500 justify-center"
+                        />
+                            
+                        <!--class="h-0 pointer-events-auto rounded-xl absolute transition-all duration-1000 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 fill-gray-500"-->
+                        
+                    </div>
+                    <div class="flex-1/3 pointer-events-auto text-center" @click="swapTheme">
+                        swap theme 
+                    </div>
+                    
+                </div>
+            </div>
         </div>
-        <div class="flex items-center justify-center w-full">
+        
+
+
+
+        <div class="flex items-center justify-center w-full bg-gray-300/70">
             <div class="" :class="fontstyling"> < </div>
             <div class="overflow-hidden h-16 flex items-center justify-center ease-in-out"
                 :class="TitleContainerWidth + ' ' + (animSkipped ? skipDurationTW : UnwrapTimeTW)">
-                <span class="whitespace-nowrap block w-full px-2" :class="fontstyling">
+                <span class="whitespace-nowrap block w-full px-2 text-center" :class="fontstyling">
                 Ferdinand Snapa
                 </span>
             </div>
             <div class="" :class="fontstyling"> / </div>
             <div class="overflow-hidden h-16 flex items-center justify-center ease-in-out"
                 :class="TitleContainerWidth + ' ' + (animSkipped ? skipDurationTW : UnwrapTimeTW)">
-                <span class="whitespace-nowrap block w-full px-2" :class="fontstyling">
+                <span class="whitespace-nowrap block w-full px-2 text-center" :class="fontstyling">
                 Web Portfolio
                 </span>
             </div>
