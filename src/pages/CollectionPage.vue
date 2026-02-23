@@ -18,7 +18,7 @@
 </script>
 
 <template>
-    <div class="w-screen bg-red-600 mt-[10vh]">
+    <div class="w-screen bg-opacity-50 mt-[10vh]">
         <div class="columns-1 sm:columns-3 lg:columns-4 xl:columns-5 gap-4 mx-24 lg:mx-28 xl:mx-32">
             <div
                 v-for="project in data.projects"

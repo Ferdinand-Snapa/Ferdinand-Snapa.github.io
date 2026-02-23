@@ -1,5 +1,4 @@
 <script setup>
-import { onMounted, ref } from 'vue'
 import Ferd_wobg from '../assets/img/ferdi_u_Bakgrunn.png'
 import { data } from '../components/store.vue'
 import SoftwareCards from '../components/SoftwareCards.vue'
@@ -23,7 +22,7 @@ const textfontclass = "text-lg lg:text-3xl lg:pb-6 pb-2"
       </div>
     </div>
 
-    <div class="mx-12 lg:mr-48 mt-6 p-6 drop-shadow-xl rounded-xl bg-secondary dark:bg-dark-secondary" v-html="data.frontPage.intro"/>
+    <div class="mx-12 lg:mr-48 mt-6 p-6 drop-shadow-xl rounded-xl bg-secondary dark:bg-dark-secondary lg:pr-[350px]" v-html="data.frontPage.intro"/>
     <!--Looping software icons-->
     <div class="relative w-full h-full lg:w-4/5 overflow-hidden mt-16 lg:m-0 lg:mt-22">
       <div class="flex w-max scroll-x p-4" ref="SoftwareCardContainer">

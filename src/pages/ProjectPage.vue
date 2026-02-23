@@ -30,7 +30,7 @@
 </script>
 
 <template>
-    <div class="w-screen min-h-screen mt-[10vh] p-8">
+    <div class="w-screen min-h-screen mt-[10vh] p-8 text-dark dark:text-light">
         <div v-if="data.currentProjectLoading" class="flex justify-center items-center min-h-screen">
             <p class="text-2xl">Loading project...</p>
         </div>
@@ -38,7 +38,7 @@
         <div v-else-if="project" class="max-w-4xl mx-auto">
             <!-- Project Header -->
             <div class="mb-8">
-                <h1 class="text-4xl lg:text-5xl font-bold mb-4 dark:text-white">
+                <h1 class="text-4xl lg:text-5xl font-bold mb-4 ">
                     {{ projectTitle }}
                 </h1>
             </div>
@@ -72,9 +72,8 @@
             <!-- Description -->
             <div v-if="projectDescription" class="mb-8">
                 <h2 class="text-2xl font-semibold mb-4 dark:text-white">Description</h2>
-                <p class="text-lg leading-relaxed dark:text-gray-300 whitespace-pre-wrap">
-                    {{ projectDescription }}
-                </p>
+                <p class="text-lg leading-relaxed dark:text-gray-300 whitespace-pre-wrap" v-html="projectDescription"/>
+
             </div>
 
             <!-- Additional Images -->

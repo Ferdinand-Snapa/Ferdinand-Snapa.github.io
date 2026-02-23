@@ -10,6 +10,8 @@ import GBflagSVG from '../assets/svg/GBflag.vue'
 import NOflagSVG from '../assets/svg/NOflag.vue'
 import MoonSVG from '../assets/svg/Moon.vue'
 import SunSVG from '../assets/svg/Sun.vue'
+import linkedinSVG from '../assets/svg/linkedin_logo.vue'
+import mail from '../assets/svg/mail.vue'
 
 enum AnimationStates {
     Initial,
@@ -184,11 +186,11 @@ const searchInput = ref<HTMLInputElement | null>(null)
                     <div class="h-px mx-5 w-7/8 bg-dark dark:bg-light self-center mt-2"></div>
 
                     <div class="flex w-full h-full items-center gap-2 justify-self-end py-4 fill-dark dark:fill-light">
-                        <githubSVG href="#" class="flex-1/3 h-8 px-8 "></githubSVG>
+                        <a title="GitHub" href="https://github.com/Ferdinand-Snapa" class="flex-1/3 h-12 pointer-events-auto"><githubSVG class="h-10 w-full"/></a>
                         <div class="w-px h-6 bg-dark dark:bg-light mx-1"></div>
-                        <githubSVG href="#" class="flex-1/3 h-8 px-8 "></githubSVG>
+                        <a title="LinkedIn" href="https://www.linkedin.com/in/ferdinand-snapa-a61576285/" class="flex-1/3 h-12 pointer-events-auto"><linkedinSVG class="h-10 w-full"/></a>
                         <div class="w-px h-6 bg-dark dark:bg-light mx-1"></div>
-                        <githubSVG href="#" class="flex-1/3 h-8 px-8 "></githubSVG>
+                        <a title="Ferdinand@snapa.no" href="mailto:ferdinand@snapa.no" class="flex-1/3 h-12 pointer-events-auto"><mail class="h-10 w-full stroke-dark dark:stroke-light"/></a>
                     </div>
                 </div>
             </div>

@@ -19,7 +19,7 @@
 
 </script>
 <template>
-    <div class="relative bg-primary dark:bg-dark-primary group cursor-pointer" @click="handleCardClick">
+    <div class="relative bg-primary dark:bg-dark-primary group cursor-pointer pb-2" @click="handleCardClick">
         <div 
             v-if="software[0]"
             class="gap-2 w-full p-2 z-10 absolute flex flex-row overflow-hidden bg-linear-to-b from-gray-500 to-transparent transition-transform ease-linear duration-200 translate-y-[-10vh] group-hover:translate-y-0">
