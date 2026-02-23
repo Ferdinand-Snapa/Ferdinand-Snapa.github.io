@@ -5,7 +5,12 @@ import { data } from '../components/store.vue';
 </script>
 
 <template>
-    <div class="flex flex-col mt-[20vh] w-screen">
+    <div class="flex flex-col mt-[16vh] w-screen">
+        <h1 class="ml-14 text-primary dark:text-dark-primary">{{ data.prefLang === 'no' ? 'Om meg' : 'About me' }}</h1>
+        <h2 class="ml-14 text-2xl text-dark dark:text-light"> {{ data.prefLang === 'no' ? 
+        'om meg norsk' : 
+        'Learning about the world around me is my greatest obsession, be it picking apart my toys as a child or the countless hours I have spent watching dev-logs, learning from all and implementing the designs into my own creations and ideas, noting them down like small personal artworks.' }}</h2>
+        <h2 class="ml-14 mt-2 text-2xl text-dark dark:text-light mb-24"> {{ data.prefLang === 'no' ? 'no' : 'I got a taste for programming from a young age, between RPG maker and Minecraft modding, leading to one of my first projects, where I tried to create a portable emulator, combining a Raspberry PI, small LCD display, Xbox controller and two power banks from my dad’s workplace, then packing it all in a case made of LEGOs' }}</h2>
         <h1 class="ml-14 text-primary dark:text-dark-primary">{{ data.prefLang === 'no' ? 'Tidslinje' : 'Timeline' }}: </h1>
         <div
             v-if="data.timeLine"
