@@ -1,18 +1,14 @@
 <script setup>
-    import ProjectCard from '../components/ProjectCard.vue';
+    import { moveItem } from 'motion-v';
+import ProjectCard from '../components/ProjectCard.vue';
     import { data } from '../components/store.vue'
-    import VanillaTilt from 'vanilla-tilt';
     import { onMounted, ref } from 'vue';
 
 
     const element = ref(null);
 
     onMounted(() => {
-        VanillaTilt.init(element.value, {
-            max: 10, // Max tilt rotation (degrees)
-            reverse: false,
-            speed: 200, // Speed of the enter/exit transition
-        });
+
     });
 
 </script>
@@ -26,11 +22,10 @@
                 class="bg-white rounded-xl shadow overflow-hidden break-inside-avoid mb-4"
                 ref="element"
             >
-                <ProjectCard :projectID="project.id"></ProjectCard>
-            </div>
-
+                <ProjectCard  :projectID="project.id"></ProjectCard>
             </div>
         </div>
+    </div>
     
 
 </template>

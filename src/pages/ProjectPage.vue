@@ -30,21 +30,21 @@
 </script>
 
 <template>
-    <div class="w-screen min-h-screen mt-[10vh] p-8 text-dark dark:text-light">
+    <div class="w-screen min-h-screen mt-[10vh] p-8 text-dark dark:text-light mb-12">
         <div v-if="data.currentProjectLoading" class="flex justify-center items-center min-h-screen">
             <p class="text-2xl">Loading project...</p>
         </div>
         
-        <div v-else-if="project" class="max-w-4xl mx-auto">
+        <div v-else-if="project" class="mx-auto w-full place-items-center">
             <!-- Project Header -->
-            <div class="mb-8">
+            <div class="mb-8 max-w-4xl">
                 <h1 class="text-4xl lg:text-5xl font-bold mb-4 ">
                     {{ projectTitle }}
                 </h1>
             </div>
 
             <!-- Software Used -->
-            <div v-if="software.length > 0" class="mb-8">
+            <div v-if="software.length > 0" class="mb-8 max-w-4xl">
                 <div class="flex flex-wrap gap-4">
                     <div v-if="data.software[0]" v-for="soft in software" :key="test" class="flex items-center gap-2 bg-gray-100 dark:bg-gray-800 p-3 rounded-lg">
                         <img 
@@ -59,7 +59,14 @@
             </div>
 
             <!-- Thumbnail -->
-            <div v-if="project.thumbnail" class="mb-8 rounded-lg overflow-hidden shadow-lg">
+             <div v-if="project.banner" class="max-w-4xl mb-8 rounded-lg overflow-hidden shadow-lg">
+                <img 
+                    class="w-full object-cover max-h-96"
+                    :src="getImageURL(project.banner)"
+                    :alt="projectTitle"
+                />
+            </div>
+            <div v-else-if="project.thumbnail" class="max-w-4xl mb-8 rounded-lg overflow-hidden shadow-lg">
                 <img 
                     class="w-full object-cover max-h-96"
                     :src="getImageURL(project.thumbnail)"
@@ -70,20 +77,20 @@
             
 
             <!-- Description -->
-            <div v-if="projectDescription" class="mb-8">
+            <div v-if="projectDescription" class="mb-8 max-w-4xl">
                 <h2 class="text-2xl font-semibold mb-4 dark:text-white">Description</h2>
                 <p class="text-lg leading-relaxed dark:text-gray-300 whitespace-pre-wrap" v-html="projectDescription"/>
 
             </div>
 
             <!-- Additional Images -->
-            <div v-if="project.images && project.images.length > 0" class="mb-8">
-                <h2 class="text-2xl font-semibold mb-4 dark:text-white">Gallery</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div v-if="project.carousel" class="mb-8 w-full">
+                <h2 class="text-2xl font-semibold mb-4 text-center dark:text-white">Gallery</h2>
+                <div class="columns-1 lg:columns-2 xl:columns-3 gap-4 mx-24 lg:mx-28 xl:mx-32 place-items-center">
                     <img 
-                        v-for="(image, index) in project.images"
+                        v-for="(image, index) in project.carousel"
                         :key="index"
-                        class="rounded-lg shadow-lg w-full object-cover"
+                        class="bg-white rounded-xl shadow overflow-hidden break-inside-avoid mb-4"
                         :src="getImageURL(image)"
                         :alt="`Project image ${index + 1}`"
                     />
