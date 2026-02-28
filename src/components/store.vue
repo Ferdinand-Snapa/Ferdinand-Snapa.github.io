@@ -43,6 +43,16 @@ const getImageURL = (collectionName, id, fileName) => {
     return `${pocketbaseUrl}/api/files/${collectionName}/${id}/${fileName}`
 }
 
+
+
+export const isVideo = (fileName) => {
+    
+    const fileExtension = fileName.split('.').pop();
+    const videExtensions = ['mp4']
+    console.log(fileExtension)
+    return videExtensions.includes(fileExtension)
+}
+
 const getPreferredLanguage = () => {
 const preferredLangs = navigator.languages.map(lang => lang.split('-')[0]);
 const supportedLangs = ['en', 'no'];

@@ -1,7 +1,10 @@
 <script setup>
-    import { data, getSoftware, loadProject } from '../components/store.vue';
-    import { computed, onMounted, ref } from 'vue';
+    import { data, getSoftware, isVideo } from '../components/store.vue';
+    import { computed, onMounted, ref, onBeforeUnmount } from 'vue';
     import { useRoute } from 'vue-router';
+
+    const modalOpen = ref(false)
+    const modalImage = ref(null)
 
     const project = ref(data.value.currentProject)
     const software = computed(() => {
@@ -27,6 +30,29 @@
         const projectRecordName = import.meta.env.VITE_POCKETBASE_PROJECTS;
         return `${pocketbaseUrl}/api/files/${projectRecordName}/${project.value.id}/${fileName}`;
     };
+
+    const OpenModal = (src) => {
+        modalImage.value = src
+        modalOpen.value = true
+    }
+
+    const closeModal = () => {
+        modalImage.value = null
+        modalOpen.value = false
+    }
+
+    const handleKey = (e) => {
+        if (e.key === "Escape") closeModal()
+    }
+
+    onMounted(() => {
+        window.addEventListener("keydown", handleKey)
+    })
+
+    onBeforeUnmount(() => {
+        window.removeEventListener("keydown", handleKey)
+    })
+
 </script>
 
 <template>
@@ -58,9 +84,10 @@
                 </div>
             </div>
 
-            <!-- Thumbnail -->
+            <!-- Banner -->
              <div v-if="project.banner" class="max-w-4xl mb-8 rounded-lg overflow-hidden shadow-lg">
-                <img 
+                <img
+                    @click="() => OpenModal(project.banner)"
                     class="w-full object-cover max-h-96"
                     :src="getImageURL(project.banner)"
                     :alt="projectTitle"
@@ -68,6 +95,7 @@
             </div>
             <div v-else-if="project.thumbnail" class="max-w-4xl mb-8 rounded-lg overflow-hidden shadow-lg">
                 <img 
+                    @click="() => OpenModal(project.thumbnail)"
                     class="w-full object-cover max-h-96"
                     :src="getImageURL(project.thumbnail)"
                     :alt="projectTitle"
@@ -87,13 +115,15 @@
             <div v-if="project.carousel" class="mb-8 w-full">
                 <h2 class="text-2xl font-semibold mb-4 text-center dark:text-white">Gallery</h2>
                 <div class="columns-1 lg:columns-2 xl:columns-3 gap-4 mx-24 lg:mx-28 xl:mx-32 place-items-center">
-                    <img 
-                        v-for="(image, index) in project.carousel"
-                        :key="index"
-                        class="bg-white rounded-xl shadow overflow-hidden break-inside-avoid mb-4"
-                        :src="getImageURL(image)"
-                        :alt="`Project image ${index + 1}`"
-                    />
+                    <div
+                        v-for="(media, index) in project.carousel"
+                        :key="index" class="bg-white rounded-xl shadow overflow-hidden break-inside-avoid mb-4">
+                        <video v-if="isVideo(media)"  :alt="`project video ${media}`" autoplay muted controls>
+                            <source :src="getImageURL(media)" type="video/mp4"> Failed to laod video
+                        </video>
+                        <img v-else :src="getImageURL(media)" :alt="`project image ${media}`" @click="() => OpenModal(media)"/>
+                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -101,5 +131,30 @@
         <div v-else class="flex justify-center items-center min-h-screen">
             <p class="text-2xl dark:text-white">No project found</p>
         </div>
+        <transition name="fade">
+      <div
+        v-if="modalOpen"
+        class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm"
+        @click.self="closeModal"
+      >
+        <div class="relative max-w-4xl w-full p-4">
+
+          <!-- Close Button -->
+          <button
+            @click="closeModal"
+            class="absolute top-2 right-2 bg-white rounded-full px-3 py-1 shadow-md hover:bg-gray-200"
+          >
+            ✕
+          </button>
+
+          <!-- Full Image -->
+          <img
+            v-if="modalImage"
+            :src="getImageURL(modalImage)"
+            class="w-full max-h-[80vh] object-contain rounded-xl"
+          />
+        </div>
+      </div>
+    </transition>
     </div>
 </template>
