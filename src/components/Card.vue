@@ -69,7 +69,7 @@ function onPointerUp() {
     draggable="false"
     alt="Card image"
     class="max-h-96 pointer-events-auto max-w-96 rounded-lg object-cover absolute cursor-grab active:cursor-grabbing select-none"
-    :class="isFront ? 'pointer-events-auto' : 'pointer-events-none' "
+    :class="isFront ? 'pointer-events-auto sway' : 'pointer-events-none' "
     :style="{
       transform: `translateX(${x}px) rotate(${rotation}deg) scale(${isFront ? 1 : 0.98})`,
       opacity: opacity,
