@@ -1,32 +1,29 @@
 <script setup>
     import ProjectCard from '../components/ProjectCard.vue';
     import { data, getSoftware } from '../components/store.vue'
-    import { computed, ref } from 'vue';
+    import { computed, ref, onMounted } from 'vue';
 
-
-    const filterSoftId = ref(null);
-
-    const select = ref('')
+    const select = ref(data.value.filterSoft ?? '')
 
     const filteredProjects = computed(() => {
-        if (filterSoftId.value) {
-            console.log("test filter projects: " + filterSoftId.value)
-            return data.value.projects.filter((project) => {return project.software.includes(filterSoftId.value)})
+        if (data.value.filterSoft) {
+            console.log("test filter projects: " + data.value.filterSoft)
+            return data.value.projects.filter((project) => {return project.software.includes(data.value.filterSoft)})
         }
         else {
             console.log("test no filter projects")
             return data.value.projects
         }
     }) 
-    
+
     function selectionChange(event) {
-        filterSoftId.value = event.target.value
+        data.value.filterSoft = event.target.value
         console.log("lenght of filtered Projects: ")
 
     }
 
     function clearFilter() {
-        filterSoftId.value = null
+        data.value.filterSoft = null
         select.value = ''
     }
 </script>
@@ -35,13 +32,13 @@
     <div class="w-screen bg-opacity-50 mt-[10vh]">
         <div class="columns-1 sm:columns-3 lg:columns-4 xl:columns-5 gap-4 mx-24 lg:mx-28 xl:mx-32">
             <div class="h-20 mb-4 flex bg-secondary dark:bg-dark-secondary rounded-xl">
-                <img v-if="filterSoftId"
+                <img v-if="data.filterSoft"
                     class="flex-1/6 h-20 object-contain rounded-xl"
-                    :key="filterSoftId + 'img'"
-                    :src="getSoftware([filterSoftId])[0].iconImage"
+                    :key="data.filterSoft+ 'img'"
+                    :src="getSoftware([data.filterSoft])[0].iconImage"
                     :title="'soft.name'"
                 />
-                <div v-else class="flex-1/6 h-max text-center">
+                <div v-else class="flex-1/6 h-full text-center text-xl content-center">
                     Filter:
                 </div>
                 <select v-model="select" class="w-full flex border-0 flex-3/6" @change="selectionChange" >
@@ -49,7 +46,7 @@
                         {{soft.name}}
                     </option>
                 </select>
-                <div v-if="filterSoftId" class="flex flex-1/6 text-center self-center pl-4" v-on:click="clearFilter">
+                <div v-if="data.filterSoft" class="flex flex-1/6 text-center self-center pl-4" v-on:click="clearFilter">
                     X
                 </div>
                 

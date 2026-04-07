@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, computed, watch, nextTick } from 'vue'
-import { data, setPrefLang } from './store.vue'
+import { data, setPrefLang, filterProjectsSoftwareId } from './store.vue'
 
 import FSLogo from '../assets/svgTemplate/FSLogo.vue'
 import listSVG from '../assets/svg/list.vue'
@@ -132,6 +132,7 @@ const skipAnimation = () => {
 
 const closeMenu = () => {
     openState.value = OpenStates.Closed
+    filterProjectsSoftwareId(null)
 }
 
 const searchInput = ref<HTMLInputElement | null>(null)

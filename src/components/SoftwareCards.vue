@@ -1,13 +1,26 @@
 <script setup>
 import { data } from './store.vue'
+import { useRouter } from 'vue-router';
+import { filterProjectsSoftwareId } from './store.vue';
+
+const router = useRouter()
+
+const handleCardClick = (softId) => {
+    console.log("I am about to mc fucking end it")
+    console.log(softId)
+    filterProjectsSoftwareId(softId)
+    router.push({ name: 'Collection' });
+}
         //class="transition-all duration-200 m-4 my-4 p-2 w-64 min-h-38 rounded-xl shadow bg-primary dark:bg-dark-primary flex flex-row items-center overflow-hidden hover:m-2 hover:my-2 hover:w-68"
 </script>
 <template>
-    <div
+    <div 
         v-if="!data.loading"
         v-for="software in data.software"
+        @click="handleCardClick(software.id)"
         v-on:click="console.log(`pressed ${software.name}`)"
-        :key="software.id"
+        :id="software.id"
+        key="software.id"
         class="w-54 h-32 mx-1 relative  shadow-md
          hover:shadow-2xl hover:-translate-y-4  transition-all duration-150 ease-linear
          overflow-hiden group bg-linear-to-r cursor-pointer rounded-xl flex"

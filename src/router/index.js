@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { loadProject } from '../components/store.vue'
+import { loadProject, filterProjectsSoftwareId } from '../components/store.vue'
 import Home from '../pages/HomePage.vue'
 import About from '../pages/AboutPage.vue'
 import Contact from '../pages/ContactPage.vue'
@@ -23,7 +23,7 @@ const routes = [
         component: Contact
     },
     {
-        path:'/collection',
+        path:'/collection/',
         name:'Collection',
         component: Collection
     },
@@ -32,7 +32,7 @@ const routes = [
         name:'Project',
         component: Project,
         beforeEnter: async (toString) => {
-            console.log(toString.params.id)
+            console.log(toString)
             await loadProject(toString.params.id)
         }
     }

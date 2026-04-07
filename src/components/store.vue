@@ -16,6 +16,7 @@ if (!(pocketbaseUrl || projectRecordName || softwareRecordName)) {
 export const pb = new pocketbase(pocketbaseUrl)
 
 export const data = ref({
+    filterSoft: null,
     prefLang: null,
     frontPage: [],
     software: [],
@@ -174,6 +175,11 @@ export const loadProject = async(projectID) => {
         data.value.currentProjectLoading = false
         console.log(`finsihed loading: ${projectID}`)
     }
+}
+
+export const filterProjectsSoftwareId = (softwareID) => {
+    console.log("filtering software for: " + softwareID)
+    data.value.filterSoft = softwareID
 }
 </script>
 
