@@ -146,7 +146,7 @@ const searchInput = ref<HTMLInputElement | null>(null)
         class="z-15 fixed inset-0 bg-gray-300 transition-opacity ease-in-out"
         :class="bgOpacity + ' ' + (animSkipped ? skipDurationTW : FadeTimeTW)" />
     </div>
-    <div class="fixed inset-0 flex flex-col items-center justify-center z-20 pointer-events-none">
+    <div class="fixed inset-0 flex flex-col items-center justify-center z-20 pointer-events-none w-screen h-screen">
         <div class=" ease-in-out flex flex-row-center gap-5 content-fit pointer-events-none drop-shadow-xl/50 z-20"
             :class="navSize + ' ' + (animSkipped ? skipDurationTW : FadeTimeTW)">
             <div class="absolute w-1/1 h-1/1 bg-primary dark:bg-dark-primary rounded-[8vh] -z-10 drop-shadow-xl/50"/>
