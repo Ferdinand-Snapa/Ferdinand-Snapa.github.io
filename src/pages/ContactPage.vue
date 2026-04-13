@@ -1,5 +1,5 @@
 <script setup>
-import FerdImg from '../assets/img/_DSC4963.JPG'
+import FerdImg from '../assets/img/contact_img.JPG'
 
 </script>
 
