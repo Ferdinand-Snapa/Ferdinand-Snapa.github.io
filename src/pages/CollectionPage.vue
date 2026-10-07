@@ -14,7 +14,7 @@
             console.log("test no filter projects")
             return data.value.projects
         }
-    }) 
+    })
 
     function selectionChange(event) {
         data.value.filterSoft = event.target.value
@@ -29,51 +29,78 @@
 </script>
 
 <template>
-    <div class="w-screen bg-opacity-50 mt-[12vh]">
-        <div class="columns-1 sm:columns-3 lg:columns-4 xl:columns-5 gap-4 mx-24 lg:mx-28 xl:mx-32">
-            <div class="h-20 mb-4 flex bg-secondary dark:bg-dark-secondary rounded-xl">
-                <img v-if="data.filterSoft"
-                    class="flex-1/6 h-20 object-contain rounded-xl"
-                    :key="data.filterSoft+ 'img'"
-                    :src="getSoftware([data.filterSoft])[0].iconImage"
-                    :title="'soft.name'"
-                />
-                <div v-else class="flex-1/6 h-full text-center text-xl content-center">
-                    Filter:
-                </div>
-                <select v-model="select" class="w-full flex border-0 flex-3/6" @change="selectionChange" >
-                    <option v-for="soft in data.software" :key="soft.id" :value="soft.id" class="text-dark text-xl rounded-xl">
-                        {{soft.name}}
-                    </option>
-                </select>
-                <div v-if="data.filterSoft" class="flex flex-1/6 text-center self-center pl-4" v-on:click="clearFilter">
-                    X
-                </div>
-                
-            </div>
-            <div v-if="filteredProjects[0] === undefined" class="text-gray-600 dark:text-background">
-                <div v-if="data.prefLang ==='no'">
-                    Ups, enten lyver noen på porteføljen,
-                    eller så har de ikke fått lagt til prosjektet ved hjelp av {{ getSoftware([select])[0]?.name }}
+  <div class="w-full mt-[12vh] px-4 sm:px-12 lg:px-28 xl:px-32">
+    <!-- Filter bar: outside the column layout so it spans full width -->
+    <div
+      class="mb-4 flex h-14 sm:h-20 w-full sm:max-w-md items-center gap-2 sm:gap-3
+             rounded-xl bg-secondary dark:bg-dark-secondary px-2 sm:px-3"
+    >
+      <img
+        v-if="data.filterSoft"
+        :key="data.filterSoft + 'img'"
+        class="h-10 w-10 sm:h-16 sm:w-16 shrink-0 object-contain rounded-lg"
+        :src="getSoftware([data.filterSoft])[0].iconImage"
+        :title="getSoftware([data.filterSoft])[0].name"
+      />
+      <span v-else class="shrink-0 text-base sm:text-xl">Filter:</span>
 
-                </div>
-                <div v-else>
-                    Oops either someone lying on portfolio
-                    or havn't gotten around to adding project using {{ getSoftware([select])[0]?.name }}
-                </div>
-                
-            </div>
-            <div
-                v-else
-                v-for="project in filteredProjects"
-                :key="project.id"
-                class="bg-white rounded-xl shadow overflow-hidden break-inside-avoid mb-4"
-                ref="element"
-            >
-                <ProjectCard :projectID="project.id"></ProjectCard>
-            </div>
-        </div>
+      <select
+        v-model="select"
+        @change="selectionChange"
+        class="min-w-0 flex-1 border-0 bg-transparent text-base sm:text-xl"
+      >
+        <option
+          v-for="soft in data.software"
+          :key="soft.id"
+          :value="soft.id"
+          class="text-dark"
+        >
+          {{ soft.name }}
+        </option>
+      </select>
+
+      <button
+        v-if="data.filterSoft"
+        type="button"
+        @click="clearFilter"
+        aria-label="Clear filter"
+        class="shrink-0 p-2 text-lg leading-none"
+      >
+        ✕
+      </button>
     </div>
-    
 
+    <!-- Empty state -->
+    <div
+      v-if="filteredProjects.length === 0"
+      class="text-sm sm:text-base text-gray-600 dark:text-background"
+    >
+      <p v-if="data.prefLang === 'no'">
+        Ups, enten lyver noen på porteføljen,
+        eller så har de ikke fått lagt til prosjektet ved hjelp av
+        {{ getSoftware([select])[0]?.name }}
+      </p>
+      <p v-else>
+        Oops, either someone's lying on their portfolio,
+        or they haven't gotten around to adding a project using
+        {{ getSoftware([select])[0]?.name }}
+      </p>
+    </div>
+
+    <!-- Masonry grid -->
+    <div
+      v-else
+      class="columns-1 min-[480px]:columns-2 sm:columns-3 lg:columns-4 xl:columns-5
+             gap-2 sm:gap-4 mb-16"
+    >
+      <div
+        v-for="project in filteredProjects"
+        :key="project.id"
+        ref="element"
+        class="mb-2 sm:mb-4 break-inside-avoid overflow-hidden rounded-xl bg-white shadow"
+      >
+        <ProjectCard :projectID="project.id" />
+      </div>
+    </div>
+  </div>
 </template>
